@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Sombra interna superior -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="50dp"/>
+            <gradient
+                android:startColor="#33000000"
+                android:endColor="#00000000"
+                android:angle="90"
+                android:type="linear"/>
+        </shape>
+    </item>
+
+    <!-- Color de fondo del botón -->
+    <item android:top="2dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="50dp"/>
+            <solid android:color="@color/accent_orange"/>
+        </shape>
+    </item>
+</layer-list>

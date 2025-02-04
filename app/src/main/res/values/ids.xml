@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- IDs para vistas -->
+    <item name="etArtPrompt" type="id"/>
+    <item name="btnSuggestPrompt" type="id"/>
+    <item name="btnGenerateArt" type="id"/>
+    <item name="styleJapones" type="id"/>
+    <item name="styleRealista" type="id"/>
+    <item name="styleTradicional" type="id"/>
+    <item name="styleSagrado" type="id"/>
+    <item name="styleFuturista" type="id"/>
+    <item name="savedTattoosContainer" type="id"/>
+    <item name="styleText" type="id" />
+</resources>

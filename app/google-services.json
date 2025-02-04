@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "375171943160",
+    "project_id": "idealtattooia",
+    "storage_bucket": "idealtattooia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375171943160:android:105c113ba24150b7a8c90d",
+        "android_client_info": {
+          "package_name": "com.example.idealtattooia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwXsqk8qz0LDH1yqOqwy3BufUEaXOIND8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ideal Tattoo IA</string>
+    <string name="prompt_hint">Describe tu tatuaje…</string>
+    <string name="suggest_button">Sugerir</string>
+    <string name="generate_button">Generar</string>
+    <string name="styles_title">Estilos</string>
+    <string name="style_japones">Japonés</string>
+    <string name="style_realista">Realista</string>
+    <string name="style_tradicional">Tradicional</string>
+    <string name="style_sagrado">Sagrado</string>
+    <string name="style_futurista">Futurista</string>
+    <string name="style_selected">Estilo seleccionado: %1$s</string>
+    <string name="error_empty_prompt">Por favor ingresa una descripción</string>
+    <string name="error_no_style">Por favor selecciona un estilo</string>
+    <string name="prompt_suggestion">Describe aquí tu idea de tatuaje…</string>
+    <string name="btn_generate">Generar Tatuaje</string>
+    <string name="btn_surprise">Sorpréndeme</string>
+    <string name="btn_watch_ad">Ver anuncio</string>
+    <string name="select_style">Selecciona el estilo</string>
+    <string name="enter_prompt">Ingrese el prompt</string>
+</resources>

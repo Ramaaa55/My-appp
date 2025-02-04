@@ -1,0 +1,6 @@
+{
+    "target": "Component1",
+    "package": "com.mysticmango.idealtattooia.component1",
+    "generateImplementation": true,
+    "generatePreviews": true
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Tema PRINCIPAL ÚNICO (Material 3) -->
+    <style name="Theme.IdealTattooIA" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Colores principales -->
+        <item name="colorPrimary">@color/accent_orange</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/dark_background</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
+
+        <!-- Barra de estado -->
+        <item name="android:statusBarColor">@color/dark_background</item>
+        <item name="android:navigationBarColor">@color/dark_background</item>
+        <item name="android:windowBackground">@color/dark_background</item>
+
+        <!-- Estilos de componentes (Material 3) -->
+        <item name="textInputStyle">@style/Widget.Material3.TextInputLayout.OutlinedBox</item>
+        <item name="materialCardViewStyle">@style/Widget.Material3.CardView</item>
+        <item name="materialButtonStyle">@style/Widget.Material3.Button</item>
+    </style>
+
+    <!-- Tema sin ActionBar -->
+    <style name="Theme.IdealTattooIA.NoActionBar" parent="Theme.IdealTattooIA">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Definir estilo de CardView para Material 3 -->
+    <style name="Widget.Material3.CardView" parent="android:Widget">
+        <item name="cardBackgroundColor">?attr/colorSurface</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+</resources>

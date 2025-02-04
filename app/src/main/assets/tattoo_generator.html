@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Muestras de Tatuajes AI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #333;
+            border-radius: 0 0 10px 10px;
+            position: sticky;
+            top: 0;
+        }
+
+        .top-bar button {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 4px 6px rgba(255, 152, 0, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .top-bar button:hover {
+            transform: scale(1.05);
+            background-color: #e68900;
+        }
+
+        .top-bar p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+    /* Diseño responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+        .top-bar button {
+            font-size: 12px;
+            padding: 8px 12px;
+        }
+
+        .top-bar p {
+            font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 5px;
+            }
+
+        .top-bar {
+            flex-direction: column;
+            padding: 8px;
+        }
+
+        .top-bar button {
+            width: 100%;
+            margin-bottom: 5px;
+            }
+        }
+        .header-text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+            margin-top: 40px;
+            color: #ffffff;
+        }
+
+        #artPrompt {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            background-color: #555;
+            color: white;
+            outline: none;
+        }
+
+        #artPrompt::placeholder {
+            color: #aaa;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px 0;
+            background-color: #ff9800;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 10px;
+            box-shadow: 0 4px 8px rgba(255, 152, 0, 0.3);
+        }
+
+        button:hover {
+            background-color: #e68900;
+            transform: scale(1.05);
+        }
+
+        .style-section {
+            margin-top: 20px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .style-section h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 22px;
+            color: #ffffff;
+            margin-left: 16px;
+        }
+
+        .styles {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+
+        .style-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 5px;
+        }
+
+        .style-button {
+            width: 100px;
+            height: 100px;
+            background-color: #ff9800;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.1s, box-shadow 0.1s;
+            position: relative;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(255, 152, 0, 0.3);
+        }
+
+        .style-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .style-button:hover {
+            transform: scale(1.05);
+        }
+
+        .style-button.selected {
+            box-shadow: 0 0 10px 5px #ff9800;
+        }
+
+        .style-label {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .modal-content img {
+            width: auto;
+            max-width: 90%;
+            height: auto;
+            max-height: 90%;
+            border-radius: 8px;
+            object-fit: contain;
+            object-position: center;
+            margin: auto;
+            display: block;
+            clip-path: inset(0% 0% 5% 0%);
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #ff9800;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            font-size: 16px;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid #ff9800;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-top: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .modal-buttons {
+            margin-top: 10px;
+        }
+
+
+        .saved-tattoos-section {
+            margin-top: 20px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .saved-tattoos-section h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 22px;
+            color: #ffffff;
+            margin-left: 16px;
+        }
+
+        .saved-tattoos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px 0;
+            overflow-y: auto;
+            max-height: 200px;
+        }
+
+        .saved-tattoo {
+            width: 100px;
+            height: 100px;
+            background-color: #555;
+            border: none;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .saved-tattoo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .modal-buttons button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(255, 152, 0, 0.3);
+        }
+
+        .download-button {
+            background-color: #ff9800;
+            color: #fff;
+        }
+
+        .download-button:hover {
+            background-color: #e68900;
+            transform: scale(1.05);
+        }
+
+        .menu-button {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            background: url('file:///android_res/drawable/pruebas.png') no-repeat center center;
+            background-size: cover;
+            cursor: pointer;
+        }
+
+        /* Menú desplegable */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 16px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            overflow: hidden;
+            width: 220px;
+            padding: 10px;
+        }
+
+        .dropdown-menu label {
+            display: block;
+            color: white;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .dropdown-menu input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .dropdown-menu .menu-buttons {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .dropdown-menu button {
+            width: 90px;
+            padding: 8px 10px;
+            font-size: 14px;
+            background-color: #ff9800;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .dropdown-menu button:hover {
+            background-color: #e68900;
+            transform: scale(1.05);
+        }
+
+        .menu-visible {
+            display: block;
+        }
+        .tokens-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .tokens-container button {
+            flex: 1;
+            margin-right: 10px;
+            padding: 10px 15px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(255, 152, 0, 0.3);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .tokens-container button:hover {
+            background-color: #e68900;
+            transform: scale(1.05);
+        }
+
+        .tokens-container p {
+            flex: 0;
+            font-size: 16px;
+            color: white;
+            margin: 0;
+            text-align: right;
+        }
+
+    </style>
+</head>
+<div style="display: flex; align-items: center; justify-content: flex-start; padding: 10px;">
+    <!-- Botón para ganar tokens -->
+    <button
+            onclick="showAdForTokens()"
+            style="background-color: orange; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; margin-right: 10px;">
+        GANAR TOKENS
+    </button>
+
+
+    <!-- Mostrar la cantidad de tokens -->
+    <p id="tokenDisplay" style="font-size: 16px; color: white; margin: 0;">0 Tokens</p>
+</div>
+<body>
+<div class="container">
+    <div class="header-text">AI Tattoo</div>
+    <input type="text" id="artPrompt" placeholder="Convierte tus ideas en tatuajes...">
+    <button onclick="suggestPrompt()">Sugiere</button>
+    <button onclick="onGenerateClick()">Generar</button>
+
+
+
+    <div id="noTokensModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeNoTokensModal()">&times;</span>
+            <p>¡No tienes suficientes tokens!</p>
+            <p>Mira un anuncio para ganar más tokens y continuar generando tatuajes increíbles.</p>
+            <button onclick="showAdForTokens()">Ganar Tokens</button>
+        </div>
+    </div>
+
+
+
+
+    <div class="style-section">
+        <h2>Estilos</h2>
+        <div class="styles">
+            <div class="style-container">
+                <button class="style-button" onclick="selectStyle(this, 'Black & Grey')">
+                    <img src="file:///android_res/drawable/style_black_gray.png" alt="Black & Grey">
+                </button>
+                <div class="style-label">Black & Grey</div>
+            </div>
+            <div class="style-container">
+                <button class="style-button" onclick="selectStyle(this, 'Traditional')">
+                    <img src="file:///android_res/drawable/style_traditional.png" alt="Traditional">
+                </button>
+                <div class="style-label">Traditional</div>
+            </div>
+            <div class="style-container">
+                <button class="style-button" onclick="selectStyle(this, 'New School')">
+                    <img src="file:///android_res/drawable/style_new_school.png" alt="New School">
+                </button>
+                <div class="style-label">New School</div>
+            </div>
+            <div class="style-container">
+                <button class="style-button" onclick="selectStyle(this, 'Japanese')">
+                    <img src="file:///android_res/drawable/style_japanese.png" alt="Japanese">
+                </button>
+                <div class="style-label">Japanese</div>
+            </div>
+            <div class="style-container">
+                <button class="style-button" onclick="selectStyle(this, 'Realist')">
+                    <img src="file:///android_res/drawable/style_realism.png" alt="Realist">
+                </button>
+                <div class="style-label">Realist</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="saved-tattoos-section">
+        <h2>Tatuajes Guardados</h2>
+        <div class="saved-tattoos" id="savedTattoos"></div>
+    </div>
+
+    <!-- Botón de menú -->
+    <div id="menuButton" class="menu-button"></div>
+
+    <!-- Menú desplegable -->
+    <div id="dropdownMenu" class="dropdown-menu">
+        <label><input type="radio" name="tattooSize" value="pequeno" onclick="toggleSize('pequeno')"> Tatuajes Pequeños</label>
+        <label><input type="radio" name="tattooSize" value="mediano" onclick="toggleSize('mediano')"> Tatuajes Medianos</label>
+        <label><input type="radio" name="tattooSize" value="grande" onclick="toggleSize('grande')"> Tatuajes Grandes</label>
+        <div class="menu-buttons">
+            <button onclick="applyFilter()">Aplicar</button>
+            <button onclick="removeFilter()">Eliminar</button>
+        </div>
+    </div>
+</div>
+
+<div id="artModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="loading" class="loading">
+            <div>Generando tatuaje...</div>
+            <div class="spinner"></div>
+        </div>
+        <img class="art-image" id="modalImage" src="" alt="Tatuaje Generado" style="display: none;">
+        <div class="modal-buttons">
+            <button id="downloadButton" class="download-button" onclick="downloadTattooInHD()" style="display: none;">Descargar en HD</button>
+        </div>
+    </div>
+</div>
+
+<div id="savedTattooModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeSavedTattooModal()">&times;</span>
+        <img class="art-image" id="savedTattooModalImage" src="" alt="Tatuaje Guardado" style="display: none;">
+        <div class="modal-buttons">
+            <button id="savedDownloadButton" class="download-button" onclick="downloadTattooInHD()" style="display: none;">Descargar en HD</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    var selectedStyle = '';
+    var currentImageUrl = '';
+    var retryCount = 0;
+    var selectedSize = '';
+
+    // Desplegar y ocultar el menú
+    document.getElementById('menuButton').addEventListener('click', function() {
+        var menu = document.getElementById('dropdownMenu');
+        menu.classList.toggle('menu-visible');
+    });
+
+    function selectStyle(button, style) {
+        var buttons = document.querySelectorAll('.style-button');
+        buttons.forEach(function(btn) {
+            btn.classList.remove('selected');
+        });
+
+        button.classList.add('selected');
+        selectedStyle = style;
+    }
+
+   function onGenerateClick() {
+        console.log("Intentando generar...");
+        // Verifica con Android si hay tokens disponibles
+        if (typeof Android !== "undefined" && Android.checkTokens()) {
+            generateArt(); // Genera el tatuaje si hay tokens
+        } else {
+            notifyNoTokens(); // Muestra el modal si no hay tokens
+            console.log("Intento de generación sin tokens. Mostrando notificación.");
+        }
+    }
+
+
+
+function showNoTokensModal() {
+    const modal = document.getElementById('noTokensModal');
+    modal.style.display = 'block';  // Show the modal
+}
+
+function closeNoTokensModal() {
+    const modal = document.getElementById('noTokensModal');
+    modal.style.display = 'none';  // Hide the modal
+}
+
+
+
+
+
+    function generateArt() {
+        const userInput = document.getElementById("artPrompt").value.trim();
+        if (!userInput) {
+            alert("Por favor, ingresa o sugiere un prompt.");
+            return;
+        }
+
+        // Crear el prompt según el estilo seleccionado
+        var prompt = `Tattoo design of ${userInput} in a pure white background, black and white.`;
+
+        // Modificar el prompt según el estilo seleccionado
+        if (selectedStyle === 'Black & Grey') {
+            prompt += ' In the Black & Grey style, use only black ink and shades of grey, with smooth contrasts and clean lines.';
+        } else if (selectedStyle === 'Traditional') {
+            prompt += ' In the Traditional style, use bold black outlines and simple, solid details.';
+        } else if (selectedStyle === 'New School') {
+            prompt += ' In the New School style, use exaggerated proportions and bold, dynamic lines.';
+        } else if (selectedStyle === 'Japanese') {
+            prompt += ' In the Japanese style, focus on fluid forms and delicate lines, with an emphasis on symmetry.';
+        } else if (selectedStyle === 'Realist') {
+            prompt += ' In the Realist style, use precise shadows and textures to create depth and realism.';
+        }
+
+        // Ajustar el tamaño del tatuaje según el filtro seleccionado
+        if (selectedSize === 'pequeno') {
+            prompt += ' The tattoo should be small and delicate.';
+        } else if (selectedSize === 'mediano') {
+            prompt += ' The tattoo should be medium-sized with moderate detail.';
+        } else if (selectedSize === 'grande') {
+            prompt += ' The tattoo should be large and highly detailed.';
+        }
+
+        // Sufijo aleatorio para asegurar que las imágenes sean diferentes
+        var randomSuffix = Math.random().toString(36).substring(7);
+        prompt += ` Random variation: ${randomSuffix}`;
+
+        var imageElement = document.getElementById("modalImage");
+        var artModal = document.getElementById("artModal");
+        var loadingElement = document.getElementById("loading");
+
+        var apiUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}`;
+        currentImageUrl = apiUrl;
+
+        imageElement.src = apiUrl;
+        artModal.style.display = "flex";
+        loadingElement.style.display = "flex";
+        imageElement.style.display = "none";
+        document.getElementById("downloadButton").style.display = "none";
+
+        var imageLoadTimeout = setTimeout(function() {
+            retryLoadImage(apiUrl);
+        }, 40000); // 40 segundos de tiempo de espera
+
+        imageElement.onload = function() {
+            clearTimeout(imageLoadTimeout);
+            loadingElement.style.display = "none";
+            imageElement.style.display = "block";
+            document.getElementById("downloadButton").style.display = "block";
+            saveTattoo(imageElement.src);
+            retryCount = 0; // Reiniciar el conteo de reintentos al cargar correctamente
+        };
+
+        imageElement.onerror = function() {
+            retryLoadImage(apiUrl);
+        };
+    }
+
+    // Reducir el número de reintentos y los tiempos de espera
+function retryLoadImage(apiUrl) {
+    if (retryCount < 2) { // Reducir el número de reintentos a 2
+        retryCount++;
+        console.log(`Reintentando cargar la imagen (${retryCount}/2)...`);
+        const img = new Image();
+        img.onload = function () {
+            document.getElementById("modalImage").src = apiUrl;
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("modalImage").style.display = "block";
+            document.getElementById("downloadButton").style.display = "block";
+        };
+        img.onerror = function () {
+            setTimeout(() => retryLoadImage(apiUrl), 2000); // Reducir el tiempo de espera a 2 segundos
+        };
+        img.src = apiUrl;
+    } else {
+        alert("No se pudo generar la imagen después de varios intentos.");
+        document.getElementById("loading").style.display = "none";
+    }
+}
+
+// Agregar pre-carga de imágenes para mayor rapidez
+function preloadImage(prompt) {
+    const apiUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}`;
+    const img = new Image();
+    img.src = apiUrl; // Inicia la pre-carga de la imagen
+    console.log(`Pre-cargando imagen: ${apiUrl}`);
+}
+
+
+
+
+
+    function closeModal() {
+        document.getElementById("artModal").style.display = "none";
+    }
+
+    function suggestPrompt() {
+        var prompts = [
+            "un dragon y un fenix entrelazados, altamente detallados",
+            "un leon majestuoso con una corona, cuerpo completo",
+            "una calavera detallada y realista con rosas",
+            "un pez koi clasico japones nadando rio arriba",
+            "un oso rugiendo en un paisaje forestal",
+            "un lobo tribal aullando a la luna",
+            "una pluma convirtiendose en pajaros, volando",
+            "un corazon mecanico de estilo steampunk",
+            "un mandala geometrico con patrones intrincados",
+            "un samurai feroz con una katana",
+            "un tigre rugiendo con fondo de selva",
+            "un aguila volando sobre montanas",
+            "un elefante con ornamentos indios",
+            "una serpiente enroscada alrededor de una espada",
+            "una rosa con espinas y gotas de sangre",
+            "una brujula antigua con mapas detallados",
+            "una mascara tribal con plumas y cuentas",
+            "un pavo real mostrando sus plumas",
+            "una mariposa con patrones tribales",
+            "un reloj de bolsillo con flores y enredaderas",
+            "un gato negro sentado en una luna creciente",
+            "un caballo galopando en un campo abierto",
+            "un samurai en pose de batalla",
+            "una tortuga marina nadando en el oceano",
+            "un unicornio mistico con una melena fluida",
+            "un arbol de la vida con raices profundas",
+            "un fenix renaciendo de las cenizas",
+            "un dragon chino enroscado alrededor de una perla",
+            "una flor de loto con petalos detallados",
+            "un guerrero vikingo con un casco con cuernos",
+            "un escorpion tribal con detalles intrincados",
+            "una geisha japonesa con abanicos de colores",
+            "un casco espartano con una cresta de plumas",
+            "un angel guardian con alas extendidas",
+            "un barco pirata navegando en alta mar",
+            "una calavera de azucar mexicana decorada",
+            "un delfin saltando sobre olas",
+            "un buho sentado en una rama",
+            "un angel caido con alas rotas",
+            "una medusa nadando entre corales"
+        ];
+        var randomIndex = Math.floor(Math.random() * prompts.length);
+        document.getElementById("artPrompt").value = prompts[randomIndex]; // Solo sugiere el prompt
+    }
+
+    function saveTattoo(url) {
+        var savedTattoos = JSON.parse(sessionStorage.getItem("savedTattoos") || "[]");
+        savedTattoos.push(url);
+        sessionStorage.setItem("savedTattoos", JSON.stringify(savedTattoos));
+        renderSavedTattoos();
+    }
+
+    function renderSavedTattoos() {
+        var savedTattoos = JSON.parse(sessionStorage.getItem("savedTattoos") || "[]");
+        var savedTattoosContainer = document.getElementById("savedTattoos");
+        savedTattoosContainer.innerHTML = "";
+        savedTattoos.forEach(function(url) {
+            var newTattoo = document.createElement("div");
+            newTattoo.className = "saved-tattoo";
+            var newTattooImage = document.createElement("img");
+            newTattooImage.src = url;
+            newTattoo.appendChild(newTattooImage);
+            newTattoo.onclick = function() {
+                openSavedTattooModal(url);
+            };
+            savedTattoosContainer.appendChild(newTattoo);
+        });
+    }
+
+    function openSavedTattooModal(url) {
+        var savedTattooModal = document.getElementById("savedTattooModal");
+        var savedTattooModalImage = document.getElementById("savedTattooModalImage");
+        savedTattooModalImage.src = url;
+        savedTattooModal.style.display = "flex";
+        savedTattooModalImage.style.display = "block";
+        currentImageUrl = url;
+        document.getElementById("savedDownloadButton").style.display = "block";
+    }
+
+    function closeSavedTattooModal() {
+        document.getElementById("savedTattooModal").style.display = "none";
+    }
+
+    function downloadTattooInHD() {
+        // Llamar a la función nativa de Android para descargar la imagen en la galería
+        Android.downloadTattooInHD(currentImageUrl);
+    }
+
+    // Función para aplicar el filtro de tamaño
+    function toggleSize(size) {
+        selectedSize = size;
+    }
+
+    function applyFilter() {
+        var menu = document.getElementById('dropdownMenu');
+        menu.classList.remove('menu-visible');
+    }
+
+    function removeFilter() {
+        selectedSize = '';
+        var checkboxes = document.querySelectorAll('.dropdown-menu input[type="radio"]');
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+        var menu = document.getElementById('dropdownMenu');
+        menu.classList.remove('menu-visible');
+    }
+
+    window.onload = function() {
+        renderSavedTattoos();
+    }
+
+    window.generateArt = generateArt;
+let tokens = 0;
+
+// Actualizar la cantidad de tokens mostrados
+function updateTokenDisplay() {
+    const tokenDisplay = document.getElementById('tokenDisplay');
+    if (tokenDisplay) {
+        tokenDisplay.textContent = `${tokens} Tokens`;
+    }
+}
+
+
+
+
+
+// Consumir un token
+function consumeToken() {
+    console.log("Intentando consumir un token...");
+    if (tokens > 0) {
+        tokens--; // Resta un token
+        Android.consumeToken(); // Notifica a Android
+        updateTokenDisplay(); // Actualiza la interfaz
+    }
+
+    if (tokens === 0) {
+        alert("No tienes tokens suficientes para generar una imagen.");
+    }
+}
+
+
+
+
+
+
+
+// Ganar tokens viendo anuncios
+
+
+
+
+// Incrementar tokens desde Android
+function addTokens(amount) {
+    tokens += amount; // Actualiza localmente
+    updateTokenDisplay(); // Actualiza la interfaz gráfica
+    alert(`¡Has ganado ${amount} tokens!`);
+    closeNoTokensModal(); // Cierra el modal si estaba abierto
+}
+
+
+// Inicializar la cantidad de tokens desde Android
+function initializeTokens(initialTokens) {
+    tokens = initialTokens; // Establece los tokens iniciales
+    updateTokenDisplay(); // Refleja los tokens en la interfaz
+    console.log(`Tokens inicializados desde Android: ${tokens}`);
+}
+
+
+
+
+
+
+// Inicializar tokens al cargar el HTML
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("HTML completamente cargado y listo.");
+});
+
+
+function generateImage() {
+    console.log("Verificando tokens antes de generar...");
+    Android.consumeToken(); // Solicita consumir un token desde Android
+    setTimeout(() => {
+        Android.syncTokens(); // Sincroniza los tokens después del consumo
+        setTimeout(() => {
+            if (tokens > 0) {
+                generateArt(); // Llama a la función para generar la imagen
+            } else {
+                alert("No tienes tokens suficientes para generar una imagen.");
+            }
+        }, 300); // Tiempo adicional para garantizar la sincronización
+    }, 300); // Tiempo para asegurar que Android procese el consumo
+}
+
+
+
+
+function syncTokens(newTokenCount) {
+    tokens = newTokenCount; // Actualiza los tokens desde Android
+    updateTokenDisplay(); // Actualiza la interfaz gráfica
+    console.log(`Tokens sincronizados: ${tokens}`);
+}
+
+
+// Función para mostrar el modal de "No tienes tokens"
+function notifyNoTokens() {
+    const modal = document.getElementById("noTokensModal");
+    modal.style.display = "block"; // Mostrar el modal
+}
+
+// Función para cerrar el modal
+function closeNoTokensModal() {
+    const modal = document.getElementById("noTokensModal");
+    modal.style.display = "none"; // Ocultar el modal
+}
+
+// Evento para el botón "Generar"
+function onGenerateClick() {
+    if (tokens > 0) {
+        // Consumir el token inmediatamente
+        tokens--;
+        updateTokenDisplay(); // Actualizar la visualización de tokens
+        Android.consumeToken(); // Notificar al backend
+        generateArt(); // Proceder con la generación
+    } else {
+        notifyNoTokens();
+    }
+}
+
+
+
+
+// Función para simular ganar tokens viendo un anuncio
+function earnTokens() {
+    console.log("Mostrando anuncio...");
+    // Aquí puedes integrar la lógica para mostrar anuncios y otorgar tokens
+    tokens += 5; // Ejemplo: suma 5 tokens después del anuncio
+    closeNoTokensModal(); // Cierra el modal automáticamente
+}
+
+
+function showAdForTokens() {
+    if (typeof Android !== 'undefined' && Android.watchAdForTokens) {
+        Android.watchAdForTokens(); // Llama al método de Android para mostrar el anuncio
+    } else {
+        alert("La función para mostrar anuncios no está disponible.");
+    }
+}
+
+
+
+
+</script>
+</body>
+</html>

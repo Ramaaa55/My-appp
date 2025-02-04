@@ -1,0 +1,2452 @@
+{
+  "name": "component_1",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "uC2LEvwmPKWJFWnzKDk4Rb",
+    "node": "2:3",
+    "version": "2170926588828840044",
+    "component-id": "b5b182f8a8acf1d05f0a0fbcbeda3ebd9f016fad"
+  },
+  "default": "Component 1",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "onboarding 4"
+      },
+      {
+        "type": "group",
+        "id": "onboarding 3"
+      },
+      {
+        "type": "group",
+        "id": "onboarding 2"
+      },
+      {
+        "type": "group",
+        "id": "onboarding 1"
+      },
+      {
+        "type": "group",
+        "id": "onboarding 0"
+      },
+      {
+        "type": "group",
+        "id": "Text 4 onboarding 4"
+      },
+      {
+        "type": "group",
+        "id": "Boton 4 onboarding 4"
+      },
+      {
+        "type": "group",
+        "id": "Slide 4 onboarding 4"
+      },
+      {
+        "type": "group",
+        "id": "Frame 12 onboarding 4"
+      },
+      {
+        "type": "group",
+        "id": "onboarding 4_synth"
+      },
+      {
+        "type": "group",
+        "id": "Frame 13 onboarding 4"
+      },
+      {
+        "type": "group",
+        "id": "Frame 14 onboarding 4"
+      },
+      {
+        "type": "text",
+        "id": "Descarga tus diseños en HD cuando quieras"
+      },
+      {
+        "type": "text",
+        "id": "Eres libre de poder descargar tus tatuajes sin inconvenientes"
+      },
+      {
+        "type": "vector",
+        "id": "Flechita 4 onboarding 4"
+      },
+      {
+        "type": "vector",
+        "id": "Dot 1 onboarding 4"
+      },
+      {
+        "type": "vector",
+        "id": "Dot 2 onboarding 4"
+      },
+      {
+        "type": "vector",
+        "id": "Dot 3 onboarding 4"
+      },
+      {
+        "type": "vector",
+        "id": "rayita 4 onboarding 4"
+      },
+      {
+        "type": "image",
+        "id": "cc68c43eb4ff41d1b46244032fa32ff2 1 onboarding 4"
+      },
+      {
+        "type": "group",
+        "id": "Frame 12 onboarding 4_synth"
+      },
+      {
+        "type": "group",
+        "id": "onboarding 3_synth"
+      },
+      {
+        "type": "group",
+        "id": "Frame 11 onboarding 3"
+      },
+      {
+        "type": "group",
+        "id": "Frame 10 onboarding 3"
+      },
+      {
+        "type": "group",
+        "id": "Boton 3 onboarding 3"
+      },
+      {
+        "type": "group",
+        "id": "Text 3 onboarding 3"
+      },
+      {
+        "type": "group",
+        "id": "Frame 7 onboarding 3"
+      },
+      {
+        "type": "group",
+        "id": "Slide 3 onboarding 3"
+      },
+      {
+        "type": "group",
+        "id": "Frame 8 onboarding 3"
+      },
+      {
+        "type": "group",
+        "id": "Frame 9 onboarding 3"
+      },
+      {
+        "type": "image",
+        "id": "new_school_transformed-removebg-preview 1 onboarding 3"
+      },
+      {
+        "type": "group",
+        "id": "Frame 8 onboarding 3_synth"
+      },
+      {
+        "type": "image",
+        "id": "traditional-transformed-removebg-preview 1 onboarding 3"
+      },
+      {
+        "type": "group",
+        "id": "Frame 9 onboarding 3_synth"
+      },
+      {
+        "type": "image",
+        "id": "japanese transformed onboarding 3"
+      },
+      {
+        "type": "image",
+        "id": "Black_and_grey-transformed-removebg-preview (1) 1 onboarding 3"
+      },
+      {
+        "type": "vector",
+        "id": "Flechita 3 onboarding 3"
+      },
+      {
+        "type": "text",
+        "id": "Texto 3.1 onboarding 3"
+      },
+      {
+        "type": "text",
+        "id": "Texto 3 onboarding 3"
+      },
+      {
+        "type": "image",
+        "id": "realist_transformed-removebg-preview (1) 1 onboarding 3"
+      },
+      {
+        "type": "vector",
+        "id": "Dot 4 onboarding 3"
+      },
+      {
+        "type": "vector",
+        "id": "Dot 5 onboarding 3"
+      },
+      {
+        "type": "vector",
+        "id": "rayita 3 onboarding 3"
+      },
+      {
+        "type": "vector",
+        "id": "Dot 6 onboarding 3"
+      },
+      {
+        "type": "group",
+        "id": "Frame 5 onboarding 2"
+      },
+      {
+        "type": "group",
+        "id": "Text 2 onboarding 2"
+      },
+      {
+        "type": "group",
+        "id": "Boton 2 onboarding 2"
+      },
+      {
+        "type": "group",
+        "id": "Slide 2 onboarding 2"
+      },
+      {
+        "type": "group",
+        "id": "Framee 11 onboarding 2"
+      },
+      {
+        "type": "group",
+        "id": "Framee 10 onboarding 2"
+      },
+      {
+        "type": "group",
+        "id": "Framee 8 onboarding 2"
+      },
+      {
+        "type": "group",
+        "id": "Framee 9 onboarding 2"
+      },
+      {
+        "type": "group",
+        "id": "Framee 7 onboarding 2"
+      },
+      {
+        "type": "group",
+        "id": "onboarding 2_synth"
+      },
+      {
+        "type": "text",
+        "id": "Texto 2 onboarding 2"
+      },
+      {
+        "type": "text",
+        "id": "Texto 2.1 onboarding 2"
+      },
+      {
+        "type": "vector",
+        "id": "Flechita 2 onboarding 2"
+      },
+      {
+        "type": "vector",
+        "id": "Dot 7 onboarding 2"
+      },
+      {
+        "type": "vector",
+        "id": "Dot 8 onboarding 2"
+      },
+      {
+        "type": "vector",
+        "id": "Slideee onboarding 2"
+      },
+      {
+        "type": "vector",
+        "id": "Dot onboarding 2"
+      },
+      {
+        "type": "image",
+        "id": "japanese_transformed-removebg-preview 1 onboarding 2"
+      },
+      {
+        "type": "group",
+        "id": "Framee 11 onboarding 2_synth"
+      },
+      {
+        "type": "image",
+        "id": "black and grey transformed onboarding 2"
+      },
+      {
+        "type": "image",
+        "id": "new school transformed onboarding 2"
+      },
+      {
+        "type": "image",
+        "id": "traditional transformed onboarding 2"
+      },
+      {
+        "type": "image",
+        "id": "realist transformed onboarding 2"
+      },
+      {
+        "type": "group",
+        "id": "onboarding 1_synth"
+      },
+      {
+        "type": "group",
+        "id": "Button Next 1 onboarding 1"
+      },
+      {
+        "type": "group",
+        "id": "Text 1 onboarding 1"
+      },
+      {
+        "type": "group",
+        "id": "Slide 1 onboarding 1"
+      },
+      {
+        "type": "group",
+        "id": "Frame 6 onboarding 1"
+      },
+      {
+        "type": "group",
+        "id": "Frame 1 onboarding 1"
+      },
+      {
+        "type": "image",
+        "id": "Marco 1 onboarding 1"
+      },
+      {
+        "type": "group",
+        "id": "Frame 1 onboarding 1_synth"
+      },
+      {
+        "type": "vector",
+        "id": "Flechita 1 onboarding 1"
+      },
+      {
+        "type": "group",
+        "id": "Texto 1 onboarding 1"
+      },
+      {
+        "type": "group",
+        "id": "Text 1 onboarding 1_synth"
+      },
+      {
+        "type": "text",
+        "id": "Convierte tus ideas en tatuajes únicos"
+      },
+      {
+        "type": "text",
+        "id": "Haz fluir tu imaginación. Descárgalos en cualquier momento"
+      },
+      {
+        "type": "vector",
+        "id": "Dot 9 onboarding 1"
+      },
+      {
+        "type": "vector",
+        "id": "Slideeeee onboarding 1"
+      },
+      {
+        "type": "vector",
+        "id": "Dot 10 onboarding 1"
+      },
+      {
+        "type": "vector",
+        "id": "Dot 11 onboarding 1"
+      },
+      {
+        "type": "image",
+        "id": "jjapanese_transformed-removebg-preview 1 onboarding 1"
+      }
+    ],
+    "modes": {
+      "Component 1": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": false,
+            "children": [
+              "onboarding 4",
+              "onboarding 3",
+              "onboarding 2",
+              "onboarding 1",
+              "onboarding 0"
+            ]
+          },
+          {
+            "id": "onboarding 4",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 832.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 375.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 812.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Text 4 onboarding 4",
+              "Boton 4 onboarding 4",
+              "Slide 4 onboarding 4",
+              "Frame 12 onboarding 4",
+              "onboarding 4_synth"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.2857142857142857,
+              "value": 0.10980392156862745
+            },
+            "fills": [
+              {
+                "color": {
+                  "alpha": 0.4,
+                  "hue": 245.21739130434784,
+                  "saturation": 0.8214285714285714,
+                  "value": 0.10980392156862745
+                },
+                "opacity": 1.0,
+                "fill-type": "solid",
+                "blend-mode": "normal",
+                "color-stops": [],
+                "gradient-handle-positions": []
+              }
+            ]
+          },
+          {
+            "id": "onboarding 3",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 416.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 375.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 812.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "onboarding 3_synth",
+              "Frame 11 onboarding 3",
+              "Frame 10 onboarding 3",
+              "Boton 3 onboarding 3",
+              "Text 3 onboarding 3",
+              "Frame 7 onboarding 3",
+              "Slide 3 onboarding 3"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.2857142857142857,
+              "value": 0.10980392156862745
+            },
+            "fills": [
+              {
+                "color": {
+                  "alpha": 0.4,
+                  "hue": 245.21739130434784,
+                  "saturation": 0.8214285714285714,
+                  "value": 0.10980392156862745
+                },
+                "opacity": 1.0,
+                "fill-type": "solid",
+                "blend-mode": "normal",
+                "color-stops": [],
+                "gradient-handle-positions": []
+              }
+            ]
+          },
+          {
+            "id": "onboarding 2",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 375.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 812.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Frame 5 onboarding 2",
+              "Text 2 onboarding 2",
+              "Boton 2 onboarding 2",
+              "Slide 2 onboarding 2",
+              "Framee 11 onboarding 2",
+              "Framee 10 onboarding 2",
+              "Framee 8 onboarding 2",
+              "Framee 9 onboarding 2",
+              "Framee 7 onboarding 2",
+              "onboarding 2_synth"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.2857142857142857,
+              "value": 0.10980392156862745
+            },
+            "fills": [
+              {
+                "color": {
+                  "alpha": 0.4,
+                  "hue": 245.21739130434784,
+                  "saturation": 0.8214285714285714,
+                  "value": 0.10980392156862745
+                },
+                "opacity": 1.0,
+                "fill-type": "solid",
+                "blend-mode": "normal",
+                "color-stops": [],
+                "gradient-handle-positions": []
+              }
+            ]
+          },
+          {
+            "id": "onboarding 1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -416.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 375.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 812.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "onboarding 1_synth",
+              "Button Next 1 onboarding 1",
+              "Text 1 onboarding 1",
+              "Slide 1 onboarding 1",
+              "Frame 6 onboarding 1"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.2857142857142857,
+              "value": 0.10980392156862745
+            },
+            "fills": [
+              {
+                "color": {
+                  "alpha": 0.4,
+                  "hue": 245.21739130434784,
+                  "saturation": 0.8214285714285714,
+                  "value": 0.10980392156862745
+                },
+                "opacity": 1.0,
+                "fill-type": "solid",
+                "blend-mode": "normal",
+                "color-stops": [],
+                "gradient-handle-positions": []
+              }
+            ]
+          },
+          {
+            "id": "onboarding 0",
+            "padding": {
+              "top": 10.0,
+              "bottom": 10.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -832.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 375.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 812.0
+              }
+            },
+            "item-spacing": 10.0,
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.2857142857142857,
+              "value": 0.10980392156862745
+            },
+            "fills": [
+              {
+                "color": {
+                  "alpha": 0.4,
+                  "hue": 245.21739130434784,
+                  "saturation": 0.8214285714285714,
+                  "value": 0.10980392156862745
+                },
+                "opacity": 1.0,
+                "fill-type": "solid",
+                "blend-mode": "normal",
+                "color-stops": [],
+                "gradient-handle-positions": []
+              }
+            ]
+          },
+          {
+            "id": "Text 4 onboarding 4",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 34.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 566.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 307.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "children": [
+              "Frame 13 onboarding 4",
+              "Frame 14 onboarding 4"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Boton 4 onboarding 4",
+            "padding": 19.0,
+            "border-radius": 31.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 281.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 676.0
+              }
+            },
+            "tap-handler": "$on Boton 4 onboarding 4 tapped",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 62.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 62.0
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "Flechita 4 onboarding 4"
+            ],
+            "item-spacing": 10.0,
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.9529411764705882
+            },
+            "clip-content": false
+          },
+          {
+            "id": "Slide 4 onboarding 4",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 32.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 705.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "Dot 1 onboarding 4",
+              "Dot 2 onboarding 4",
+              "Dot 3 onboarding 4",
+              "rayita 4 onboarding 4"
+            ],
+            "item-spacing": 4.0,
+            "clip-content": false
+          },
+          {
+            "id": "Frame 12 onboarding 4",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 113.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "cc68c43eb4ff41d1b46244032fa32ff2 1 onboarding 4",
+              "Frame 12 onboarding 4_synth"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "onboarding 4_synth",
+            "opacity": 100.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 375.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 812.0
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "end",
+            "item-spacing": -19.0
+          },
+          {
+            "id": "Frame 13 onboarding 4",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "Descarga tus diseños en HD cuando quieras"
+            ],
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "Frame 14 onboarding 4",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 292.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "Eres libre de poder descargar tus tatuajes sin inconvenientes"
+            ],
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "Descarga tus diseños en HD cuando quieras",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 700.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "text-content": "Descarga tus diseños en HD cuando quieras",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 24.0,
+            "letter-spacing": -0.12,
+            "line-height": 1.193359375,
+            "typeface": "SF Pro Display"
+          },
+          {
+            "id": "Eres libre de poder descargar tus tatuajes sin inconvenientes",
+            "opacity": 0.550000011920929,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "text-content": "Eres libre de poder descargar tus tatuajes sin inconvenientes",
+            "overflow": "visible",
+            "max-lines": -1,
+            "line-height": 1.4,
+            "typeface": "SF Pro Display"
+          },
+          {
+            "id": "Flechita 4 onboarding 4",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 16.9998779296875
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 16.500009536743164
+              }
+            },
+            "vector-content": "flechita_4_onboarding_4.svg"
+          },
+          {
+            "id": "Dot 1 onboarding 4",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "dot_1_onboarding_4.svg"
+          },
+          {
+            "id": "Dot 2 onboarding 4",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "dot_2_onboarding_4.svg"
+          },
+          {
+            "id": "Dot 3 onboarding 4",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "dot_3_onboarding_4.svg"
+          },
+          {
+            "id": "rayita 4 onboarding 4",
+            "border-radius": 5.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 17.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "rayita_4_onboarding_4.svg"
+          },
+          {
+            "id": "cc68c43eb4ff41d1b46244032fa32ff2 1 onboarding 4",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 10.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -113.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 354.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 576.0
+              }
+            },
+            "image-content": "cc68c43eb4ff41d1b46244032fa32ff2_1_onboarding_4.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Frame 12 onboarding 4_synth",
+            "opacity": 100.0,
+            "padding": 10.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink",
+                "min": 374.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink",
+                "min": 596.0
+              }
+            },
+            "arrangement": "row",
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "onboarding 3_synth",
+            "opacity": 100.0,
+            "padding": {
+              "left": 14.0,
+              "top": 28.0,
+              "right": 14.0,
+              "bottom": 28.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 375.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 812.0
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Frame 8 onboarding 3",
+              "Frame 9 onboarding 3"
+            ],
+            "item-spacing": -19.0
+          },
+          {
+            "id": "Frame 11 onboarding 3",
+            "padding": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 32.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 44.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "japanese transformed onboarding 3"
+            ],
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "Frame 10 onboarding 3",
+            "padding": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 193.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 20.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "Black_and_grey-transformed-removebg-preview (1) 1 onboarding 3"
+            ],
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "Boton 3 onboarding 3",
+            "padding": 22.0,
+            "border-radius": 31.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 281.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 676.0
+              }
+            },
+            "tap-handler": "$on Boton 3 onboarding 3 tapped",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 62.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 62.0
+              }
+            },
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Flechita 3 onboarding 3"
+            ],
+            "item-spacing": 10.0,
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.007843137254901933,
+              "value": 1.0
+            },
+            "clip-content": false
+          },
+          {
+            "id": "Text 3 onboarding 3",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 37.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 575.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 311.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 67.0
+              }
+            },
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Texto 3.1 onboarding 3",
+              "Texto 3 onboarding 3"
+            ],
+            "item-spacing": 8.0,
+            "clip-content": false
+          },
+          {
+            "id": "Frame 7 onboarding 3",
+            "padding": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 114.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 387.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "realist_transformed-removebg-preview (1) 1 onboarding 3"
+            ],
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "Slide 3 onboarding 3",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 32.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 705.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "Dot 4 onboarding 3",
+              "Dot 5 onboarding 3",
+              "rayita 3 onboarding 3",
+              "Dot 6 onboarding 3"
+            ],
+            "item-spacing": 4.0,
+            "clip-content": false
+          },
+          {
+            "id": "Frame 8 onboarding 3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "new_school_transformed-removebg-preview 1 onboarding 3",
+              "Frame 8 onboarding 3_synth"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Frame 9 onboarding 3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "traditional-transformed-removebg-preview 1 onboarding 3",
+              "Frame 9 onboarding 3_synth"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "new_school_transformed-removebg-preview 1 onboarding 3",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 20.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 195.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 146.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 164.0
+              }
+            },
+            "image-content": "new_school_transformed_removebg_preview_1_onboarding_3.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Frame 8 onboarding 3_synth",
+            "opacity": 100.0,
+            "padding": 10.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink",
+                "min": 166.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink",
+                "min": 184.0
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "traditional-transformed-removebg-preview 1 onboarding 3",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 43.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 196.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 142.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 176.0
+              }
+            },
+            "image-content": "traditional_transformed_removebg_preview_1_onboarding_3.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Frame 9 onboarding 3_synth",
+            "opacity": 100.0,
+            "padding": 10.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink",
+                "min": 162.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink",
+                "min": 196.0
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "japanese transformed onboarding 3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 138.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 160.0
+              }
+            },
+            "image-content": "japanese_transformed_onboarding_3.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Black_and_grey-transformed-removebg-preview (1) 1 onboarding 3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 144.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 192.0
+              }
+            },
+            "image-content": "black_and_grey_transformed_removebg_preview_1_1_onboarding_3.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Flechita 3 onboarding 3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 16.9998779296875
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 16.500009536743164
+              }
+            },
+            "vector-content": "flechita_3_onboarding_3.svg"
+          },
+          {
+            "id": "Texto 3.1 onboarding 3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 311.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 29.0
+              }
+            },
+            "font-weight": 700.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "text-content": "Prueba diferentes estilos",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 24.0,
+            "letter-spacing": -0.12,
+            "line-height": 1.193359375,
+            "typeface": "SF Pro Display"
+          },
+          {
+            "id": "Texto 3 onboarding 3",
+            "opacity": 0.550000011920929,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 311.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 30.0
+              }
+            },
+            "color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "text-content": "Elige el que mas se adapte a tus preferencias",
+            "overflow": "visible",
+            "max-lines": -1,
+            "line-height": 1.4,
+            "typeface": "SF Pro Display"
+          },
+          {
+            "id": "realist_transformed-removebg-preview (1) 1 onboarding 3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 131.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 159.0
+              }
+            },
+            "image-content": "realist_transformed_removebg_preview_1_1_onboarding_3.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Dot 4 onboarding 3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "dot_4_onboarding_3.svg"
+          },
+          {
+            "id": "Dot 5 onboarding 3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "dot_5_onboarding_3.svg"
+          },
+          {
+            "id": "rayita 3 onboarding 3",
+            "border-radius": 5.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 17.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "rayita_3_onboarding_3.svg"
+          },
+          {
+            "id": "Dot 6 onboarding 3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "dot_6_onboarding_3.svg"
+          },
+          {
+            "id": "Frame 5 onboarding 2",
+            "padding": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 375.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 29.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink",
+                "min": 164.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink",
+                "min": 212.0
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "Text 2 onboarding 2",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 32.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 573.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 311.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 67.0
+              }
+            },
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Texto 2 onboarding 2",
+              "Texto 2.1 onboarding 2"
+            ],
+            "item-spacing": 8.0,
+            "clip-content": false
+          },
+          {
+            "id": "Boton 2 onboarding 2",
+            "padding": {
+              "left": 23.0,
+              "top": 24.0,
+              "right": 23.0,
+              "bottom": 24.0
+            },
+            "border-radius": 31.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 281.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 676.0
+              }
+            },
+            "tap-handler": "$on Boton 2 onboarding 2 tapped",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 62.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 62.0
+              }
+            },
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Flechita 2 onboarding 2"
+            ],
+            "item-spacing": 10.0,
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.007843137254901933,
+              "value": 1.0
+            },
+            "clip-content": false
+          },
+          {
+            "id": "Slide 2 onboarding 2",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 32.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 705.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "Dot 7 onboarding 2",
+              "Dot 8 onboarding 2",
+              "Slideee onboarding 2",
+              "Dot onboarding 2"
+            ],
+            "item-spacing": 4.0,
+            "clip-content": false
+          },
+          {
+            "id": "Framee 11 onboarding 2",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -158.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 51.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "japanese_transformed-removebg-preview 1 onboarding 2",
+              "Framee 11 onboarding 2_synth"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Framee 10 onboarding 2",
+            "padding": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 360.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 29.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "black and grey transformed onboarding 2"
+            ],
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "Framee 8 onboarding 2",
+            "padding": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -166.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 231.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "new school transformed onboarding 2"
+            ],
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "Framee 9 onboarding 2",
+            "padding": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 362.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 221.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "traditional transformed onboarding 2"
+            ],
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "Framee 7 onboarding 2",
+            "padding": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 112.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 803.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "realist transformed onboarding 2"
+            ],
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "onboarding 2_synth",
+            "opacity": 100.0,
+            "padding": {
+              "top": 10.0,
+              "bottom": 10.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 375.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 812.0
+              }
+            },
+            "item-spacing": -19.0
+          },
+          {
+            "id": "Texto 2 onboarding 2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 311.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 29.0
+              }
+            },
+            "font-weight": 700.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "text-content": "Prueba diferentes estilos",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 24.0,
+            "letter-spacing": -0.12,
+            "line-height": 1.193359375,
+            "typeface": "SF Pro Display"
+          },
+          {
+            "id": "Texto 2.1 onboarding 2",
+            "opacity": 0.550000011920929,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 311.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 30.0
+              }
+            },
+            "color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "text-content": "Elige el que mas se adapte a tus preferencias",
+            "overflow": "visible",
+            "max-lines": -1,
+            "line-height": 1.4,
+            "typeface": "SF Pro Display"
+          },
+          {
+            "id": "Flechita 2 onboarding 2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 16.5
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 13.54900074005127
+              }
+            },
+            "vector-content": "flechita_2_onboarding_2.svg"
+          },
+          {
+            "id": "Dot 7 onboarding 2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "dot_7_onboarding_2.svg"
+          },
+          {
+            "id": "Dot 8 onboarding 2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "dot_8_onboarding_2.svg"
+          },
+          {
+            "id": "Slideee onboarding 2",
+            "border-radius": 5.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 17.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "slideee_onboarding_2.svg"
+          },
+          {
+            "id": "Dot onboarding 2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "dot_onboarding_2.svg"
+          },
+          {
+            "id": "japanese_transformed-removebg-preview 1 onboarding 2",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 10.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 10.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 138.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 160.0
+              }
+            },
+            "image-content": "japanese_transformed_onboarding_3.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Framee 11 onboarding 2_synth",
+            "opacity": 100.0,
+            "padding": 10.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink",
+                "min": 158.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink",
+                "min": 180.0
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "black and grey transformed onboarding 2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 144.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 192.0
+              }
+            },
+            "image-content": "black_and_grey_transformed_removebg_preview_1_1_onboarding_3.png",
+            "scale": "cover"
+          },
+          {
+            "id": "new school transformed onboarding 2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 146.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 164.0
+              }
+            },
+            "image-content": "new_school_transformed_removebg_preview_1_onboarding_3.png",
+            "scale": "cover"
+          },
+          {
+            "id": "traditional transformed onboarding 2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 142.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 176.0
+              }
+            },
+            "image-content": "traditional_transformed_removebg_preview_1_onboarding_3.png",
+            "scale": "cover"
+          },
+          {
+            "id": "realist transformed onboarding 2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 131.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 159.0
+              }
+            },
+            "image-content": "realist_transformed_removebg_preview_1_1_onboarding_3.png",
+            "scale": "cover"
+          },
+          {
+            "id": "onboarding 1_synth",
+            "opacity": 100.0,
+            "padding": {
+              "top": 10.0,
+              "bottom": 10.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 375.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 812.0
+              }
+            },
+            "main-axis-align": "end",
+            "cross-axis-align": "start",
+            "children": [
+              "Frame 1 onboarding 1"
+            ],
+            "item-spacing": -19.0
+          },
+          {
+            "id": "Button Next 1 onboarding 1",
+            "padding": {
+              "left": 23.0,
+              "top": 24.0,
+              "right": 23.0,
+              "bottom": 24.0
+            },
+            "border-radius": 31.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "end",
+                "offset": -32.0
+              },
+              "vertical": {
+                "attachment": "end",
+                "offset": -74.0
+              }
+            },
+            "tap-handler": "$on Button Next 1 onboarding 1 tapped",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 62.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 62.0
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "end",
+            "children": [
+              "Flechita 1 onboarding 1"
+            ],
+            "item-spacing": 10.0,
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.007843137254901933,
+              "value": 1.0
+            },
+            "clip-content": false
+          },
+          {
+            "id": "Text 1 onboarding 1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 4.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 505.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 375.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 140.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Texto 1 onboarding 1",
+              "Text 1 onboarding 1_synth"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Slide 1 onboarding 1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 32.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 705.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "Dot 9 onboarding 1",
+              "Slideeeee onboarding 1",
+              "Dot 10 onboarding 1",
+              "Dot 11 onboarding 1"
+            ],
+            "item-spacing": 4.0,
+            "clip-content": false
+          },
+          {
+            "id": "Frame 6 onboarding 1",
+            "padding": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 375.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 28.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "jjapanese_transformed-removebg-preview 1 onboarding 1"
+            ],
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "Frame 1 onboarding 1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 375.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 376.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Marco 1 onboarding 1",
+              "Frame 1 onboarding 1_synth"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Marco 1 onboarding 1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -308.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 402.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 428.0
+              }
+            },
+            "image-content": "marco_1_onboarding_1.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Frame 1 onboarding 1_synth",
+            "opacity": 100.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 375.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 376.0
+              }
+            },
+            "clip-content": false
+          },
+          {
+            "id": "Flechita 1 onboarding 1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 16.5
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 13.54900074005127
+              }
+            },
+            "vector-content": "flechita_1_onboarding_1.svg"
+          },
+          {
+            "id": "Texto 1 onboarding 1",
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.24705882352941178,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.0
+              },
+              "blur": 4.0,
+              "offset-x": 0.0,
+              "offset-y": 4.0,
+              "spread": 0.0,
+              "blend-mode": "normal"
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 311.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 72.0
+              }
+            },
+            "children": [
+              "Convierte tus ideas en tatuajes únicos",
+              "Haz fluir tu imaginación. Descárgalos en cualquier momento"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Text 1 onboarding 1_synth",
+            "opacity": 100.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 375.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 140.0
+              }
+            },
+            "item-spacing": 10.0,
+            "clip-content": false
+          },
+          {
+            "id": "Convierte tus ideas en tatuajes únicos",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 333.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 700.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "text-content": "Convierte tus ideas en tatuajes únicos",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 24.0,
+            "letter-spacing": -0.12,
+            "line-height": 1.193359375,
+            "typeface": "SF Pro Display"
+          },
+          {
+            "id": "Haz fluir tu imaginación. Descárgalos en cualquier momento",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 311.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 44.0
+              }
+            },
+            "color": {
+              "alpha": 1.0,
+              "hue": 270.00000000000045,
+              "saturation": 0.010152284263959498,
+              "value": 0.7725490196078432
+            },
+            "text-content": "Haz fluir tu imaginación. Descárgalos en cualquier momento\n",
+            "overflow": "visible",
+            "max-lines": -1,
+            "line-height": 1.4,
+            "typeface": "SF Pro Display"
+          },
+          {
+            "id": "Dot 9 onboarding 1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "dot_9_onboarding_1.svg"
+          },
+          {
+            "id": "Slideeeee onboarding 1",
+            "border-radius": 5.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 17.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "slideeeee_onboarding_1.svg"
+          },
+          {
+            "id": "Dot 10 onboarding 1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "dot_10_onboarding_1.svg"
+          },
+          {
+            "id": "Dot 11 onboarding 1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 4.0
+              }
+            },
+            "vector-content": "dot_11_onboarding_1.svg"
+          },
+          {
+            "id": "jjapanese_transformed-removebg-preview 1 onboarding 1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 138.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 160.0
+              }
+            },
+            "image-content": "japanese_transformed_onboarding_3.png",
+            "scale": "cover"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "on Boton 4 onboarding 4 tapped": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": "Next 4 button from onboarding 4"
+    },
+    "on Boton 3 onboarding 3 tapped": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": "Next 3 button from onboarding 3"
+    },
+    "on Boton 2 onboarding 2 tapped": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": "Next 2 button from onboarding 2"
+    },
+    "on Button Next 1 onboarding 1 tapped": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": "Next 1 button from onboarding 1"
+    }
+  },
+  "previews": [
+    {
+      "design": "Component 1",
+      "size": {
+        "width": 2039.0,
+        "height": 812.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
