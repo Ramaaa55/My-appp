@@ -11,4 +11,7 @@
     <item name="styleFuturista" type="id"/>
     <item name="savedTattoosContainer" type="id"/>
     <item name="styleText" type="id" />
+    <item name="stylesScrollView" type="id" />
+    <item name="styleImageView" type="id" />
+    <item name="styleNameTextView" type="id" />
 </resources>

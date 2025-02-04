@@ -3,8 +3,7 @@ package com.mysticmango.idealtattooia
 // Single source of truth for TattooStyle
 data class TattooStyle(
     val imageResId: Int,
-    val name: String,
-    var isSelected: Boolean = false
+    val name: String
 )
 
 object TattooStyleProvider {
@@ -14,5 +13,5 @@ object TattooStyleProvider {
         TattooStyle(R.drawable.estilo_realista, "Realista"),
         TattooStyle(R.drawable.estilo_sagrado, "Sagrado"),
         TattooStyle(R.drawable.estilo_tradicional, "Tradicional")
-    ).toMutableList()
+    )
 }

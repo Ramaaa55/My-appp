@@ -7,6 +7,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.button.MaterialButton
+import com.mysticmango.idealtattooia.R
+import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,15 +31,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupStylesRecyclerView() {
-        val container = findViewById<LinearLayout>(R.id.stylesScrollView)
-            .getChildAt(0) as LinearLayout
-
-        styles.forEachIndexed { index, style ->
-            val view = container.getChildAt(index)
-            view.findViewById<ImageView>(R.id.styleImageView)
-                .setImageResource(style.imageRes)
-            view.findViewById<TextView>(R.id.styleNameTextView)
-                .text = style.name
+        val styleRecycler = findViewById<RecyclerView>(R.id.styleRecycler).apply {
+            layoutManager = LinearLayoutManager(
+                this@MainActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
+            )
+            adapter = StyleAdapter(TattooStyleProvider.defaultStyles()) { position ->
+                Toast.makeText(
+                    this@MainActivity,
+                    "Selected: ${TattooStyleProvider.defaultStyles()[position].name}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 
