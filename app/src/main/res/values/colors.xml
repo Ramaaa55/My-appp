@@ -29,8 +29,11 @@
     <color name="orange_primary">#FF5500</color>
     <color name="gray_text">#808080</color>
     <!-- Material 3 color system -->
+    <color name="transparent">#00000000</color>
 
     <color name="primaryContainer">#EADDFF</color>
     <color name="onPrimaryContainer">#21005E</color>
     <color name="secondaryContainer">#E8DEF8</color>
+
+    <color name="darker_gray">#121212</color>
 </resources>

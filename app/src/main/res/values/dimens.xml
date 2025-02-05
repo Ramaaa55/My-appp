@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="style_card_margin">16dp</dimen>
+    <!-- Spacing -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_xlarge">32dp</dimen>
+
+    <!-- Container Padding -->
+    <dimen name="container_padding">20dp</dimen>
+    <dimen name="section_spacing">28dp</dimen>
+
+    <!-- Component Sizes -->
+    <dimen name="prompt_card_radius">24dp</dimen>
+    <dimen name="style_card_radius">16dp</dimen>
+    <dimen name="button_radius">24dp</dimen>
+    <dimen name="prompt_input_height">120dp</dimen>
+    <dimen name="style_card_width">110dp</dimen>
+    <dimen name="style_card_height">140dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_title">28sp</dimen>
+    <dimen name="text_heading">22sp</dimen>
+    <dimen name="text_body">16sp</dimen>
+    <dimen name="text_caption">12sp</dimen>
 </resources>
+
