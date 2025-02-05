@@ -27,7 +27,7 @@
             android:gravity="center"
             android:padding="@dimen/spacing_small"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_caption"
+            android:textSize="@dimen/button_text_size"
             android:fontFamily="sans-serif-medium"/>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -49,14 +49,31 @@ android {
 }
 
 dependencies {
+    // FIX: Keep only one material3 declaration
+    implementation("androidx.compose.material3:material3:1.2.1")
+
+    // FIX: Remove duplicate compose UI declarations
+    // implementation("androidx.compose.ui:ui:1.6.7")  // ← Remove this line
+
+    // FIX: Use BOM versions for other compose components
     val composeBom = platform("androidx.compose:compose-bom:2024.02.02")
     implementation(composeBom)
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.foundation:foundation-layout")
 
-    implementation("io.coil-kt:coil-compose:2.6.0")
+    // FIX: Remove duplicates and keep single BOM reference
     implementation("androidx.activity:activity-compose:1.9.0")
+
+    // FIX: Remove duplicate material3 declarations
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.cardview:cardview:1.0.0")
+
+    // FIX: Keep only one coil version
+    implementation("io.coil-kt:coil-compose:2.6.0")
+
+    // FIX: Remove these duplicates
+    // implementation("androidx.compose.ui:ui:1.6.7")
+    // implementation("androidx.compose.material:material-icons-extended:1.6.7")
 
     // AppCompat
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -77,26 +94,17 @@ dependencies {
     implementation(libs.androidx.appcompat)
 
     // Versiones explícitas sin BOM
-    implementation("androidx.compose.ui:ui:1.6.7")
     implementation("androidx.compose.foundation:foundation-layout:1.6.7") // Para weight
     implementation("androidx.compose.material3:material3:1.2.1")
-
-    // Coil con grupo de paquete completo
-    implementation("io.coil-kt:coil-compose:2.6.0")
-
-    implementation("androidx.activity:activity-compose:1.9.0")
 
     // Usar versión compatible con SDK 34
     implementation("androidx.recyclerview:recyclerview:1.3.2")  // ← Versión segura
 
     // Añadir estas dependencias EXACTAS
-    implementation("androidx.compose.material3:material3:1.2.1")
-    implementation("androidx.compose.material:material-icons-extended:1.6.7")
     implementation("com.google.android.material:material:1.11.0")
 
     implementation("androidx.compose.material3:material3:1.2.1") // Versión estable
     implementation("androidx.compose.material3:material3-window-size-class:1.2.1")
-    implementation("androidx.cardview:cardview:1.0.0") // Para CardView tradicional
 
     implementation("com.github.bumptech.glide:glide:4.16.0")
 

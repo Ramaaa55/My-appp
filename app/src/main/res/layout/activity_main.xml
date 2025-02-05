@@ -84,9 +84,9 @@
                 android:layout_marginTop="@dimen/spacing_medium"
                 android:text="Sorpréndeme"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_body"
+                android:textSize="@dimen/button_text_size"
                 app:backgroundTint="@color/white"
-                app:cornerRadius="@dimen/button_radius"
+                app:cornerRadius="@dimen/button_corner_radius"
                 app:layout_constraintTop_toBottomOf="@id/promptInput"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -135,9 +135,10 @@
                     android:layout_height="wrap_content"
                     android:text="Generar Tatuaje"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_body"
+                    android:textSize="@dimen/button_text_size"
                     app:backgroundTint="@color/orange_primary"
-                    app:cornerRadius="@dimen/button_radius"/>
+                    app:cornerRadius="@dimen/button_corner_radius"
+                    android:layout_margin="@dimen/margin_medium"/>
 
                 <TextView
                     android:layout_width="match_parent"
