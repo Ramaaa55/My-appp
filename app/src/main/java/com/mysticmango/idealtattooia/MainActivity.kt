@@ -1,17 +1,14 @@
 package com.mysticmango.idealtattooia
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.setMargins
-import androidx.core.view.updateLayoutParams
-import com.google.android.material.card.MaterialCardView
+import androidx.recyclerview.widget.RecyclerView
+import com.mysticmango.idealtattooia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+    private var selectedStyle: Style? = null
 
     private val styles = listOf(
         Style("Japones", R.drawable.estilo_japones),
@@ -21,53 +18,42 @@ class MainActivity : AppCompatActivity() {
         Style("Futurista", R.drawable.estilo_futurista)
     )
 
-    private var selectedStyle: Style? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        setupStyles()
+        setupStylesRecycler()
         setupButtons()
     }
 
-    private fun setupStyles() {
-        val container = findViewById<LinearLayout>(R.id.stylesContainer)
-        val inflater = LayoutInflater.from(this)
+    private fun setupStylesRecycler() {
+        binding.stylesRecycler.adapter = StylesAdapter(styles) { style ->
+            selectedStyle = style
+        }
 
-        styles.forEach { style ->
-            val view = inflater.inflate(R.layout.item_style, container, false) as MaterialCardView
-
-            view.findViewById<ImageView>(R.id.styleImage).setImageResource(style.imageRes)
-            view.findViewById<TextView>(R.id.styleName).text = style.name
-
-            view.setOnClickListener {
-                selectedStyle = style
-                updateStyleSelection(container, view)
+        // Add padding to show partial next item
+        binding.stylesRecycler.addItemDecoration(object : RecyclerView.ItemDecoration() {
+            override fun getItemOffsets(
+                outRect: android.graphics.Rect,
+                view: android.view.View,
+                parent: RecyclerView,
+                state: RecyclerView.State
+            ) {
+                val position = parent.getChildAdapterPosition(view)
+                if (position == state.itemCount - 1) {
+                    outRect.right = resources.getDimensionPixelSize(R.dimen.spacing_xl)
+                }
             }
-
-            container.addView(view)
-        }
-    }
-
-    private fun updateStyleSelection(container: LinearLayout, selectedView: MaterialCardView) {
-        // Reset all cards
-        for (i in 0 until container.childCount) {
-            val card = container.getChildAt(i) as MaterialCardView
-            card.strokeWidth = 0
-        }
-
-        // Highlight selected card
-        selectedView.strokeWidth = resources.getDimensionPixelSize(R.dimen.spacing_small)
-        selectedView.strokeColor = getColor(R.color.orange_primary)
+        })
     }
 
     private fun setupButtons() {
-        findViewById<Button>(R.id.surpriseButton).setOnClickListener {
+        binding.surpriseButton.setOnClickListener {
             // TODO: Implement surprise functionality
         }
 
-        findViewById<Button>(R.id.generateButton).setOnClickListener {
+        binding.generateButton.setOnClickListener {
             // TODO: Implement generate functionality
         }
     }

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
@@ -15,7 +13,6 @@
     <color name="dark_background">#121212</color>
     <color name="accent_orange">#FF5722</color>
     <color name="card_background">#1F1F1F</color>
-    <color name="text_hint">#575757</color>
     <color name="card_dark_background">#1A1A1A</color>
     <color name="card_darker_background">#0D0D0D</color>
     <color name="style_selected_stroke">#F76B00</color>
@@ -26,11 +23,25 @@
     <color name="surfaceContainer">#F3EDF7</color>
     <color name="accentOrange">#FF6B00</color>
     <color name="textPrimary">#1C1B1F</color>
-    <color name="orange_primary">#FF5500</color>
     <color name="gray_text">#808080</color>
     <!-- Material 3 color system -->
     <color name="transparent">#00000000</color>
+    <!-- Base colors -->
+    <color name="black">#FF000000</color>
 
+    <!-- Theme colors -->
+    <color name="background">#FF121214</color>
+    <color name="surface">#FF1E1E20</color>
+    <color name="accent">#FF6B38</color>
+
+    <!-- Text colors -->
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#B3FFFFFF</color>
+    <color name="text_hint">#80FFFFFF</color>
+
+    <!-- Overlay colors -->
+    <color name="overlay_light">#1AFFFFFF</color>
+    <color name="overlay_dark">#52000000</color>
     <color name="primaryContainer">#EADDFF</color>
     <color name="onPrimaryContainer">#21005E</color>
     <color name="secondaryContainer">#E8DEF8</color>
@@ -51,7 +62,8 @@
     <color name="teal_200">#03DAC6</color>
 
     <!-- Material3 Purple 200 -->
-
+    <color name="white">#FFFFFFFF</color>
+    <color name="orange_primary">#FF5500</color>
     <!-- Material3 Container Colors -->
     <color name="colorPrimaryContainer">#EADDFF</color>
     <color name="colorOnPrimaryContainer">#21005E</color>
