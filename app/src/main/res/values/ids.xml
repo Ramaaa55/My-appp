@@ -14,4 +14,5 @@
     <item name="stylesScrollView" type="id" />
     <item name="styleImageView" type="id" />
     <item name="styleNameTextView" type="id" />
+    <item name="selectionBadge" type="id" />
 </resources>

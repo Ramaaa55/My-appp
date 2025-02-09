@@ -1,17 +1,17 @@
 package com.mysticmango.idealtattooia
 
-// Single source of truth for TattooStyle
+// Single source of truth
 data class TattooStyle(
-    val imageResId: Int,
+    val imageRes: Int,  // Nombre consistente
     val name: String
 )
 
 object TattooStyleProvider {
-    fun defaultStyles() = listOf(
-        TattooStyle(R.drawable.estilo_futurista, "Futurista"),
+    fun defaultStyles(): List<TattooStyle> = listOf(
         TattooStyle(R.drawable.estilo_japones, "Japonés"),
         TattooStyle(R.drawable.estilo_realista, "Realista"),
+        TattooStyle(R.drawable.estilo_tradicional, "Tradicional"),
         TattooStyle(R.drawable.estilo_sagrado, "Sagrado"),
-        TattooStyle(R.drawable.estilo_tradicional, "Tradicional")
+        TattooStyle(R.drawable.estilo_futurista, "Futurista")
     )
 }

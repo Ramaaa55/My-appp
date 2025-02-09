@@ -33,6 +33,7 @@
     <color name="background">#FF121214</color>
     <color name="surface">#FF1E1E20</color>
     <color name="accent">#FF6B38</color>
+    <color name="selected_card_background">#FFFFFF</color>
 
     <!-- Text colors -->
     <color name="text_primary">#FFFFFFFF</color>

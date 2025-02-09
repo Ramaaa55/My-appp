@@ -19,4 +19,21 @@
     <string name="btn_watch_ad">Ver anuncio</string>
     <string name="select_style">Selecciona el estilo</string>
     <string name="enter_prompt">Ingrese el prompt</string>
+    <string name="style_image">Style image</string>
+    <string name="style_image_desc">Imagen representativa del estilo de tatuaje</string>
+
+
+    <!-- Prompts realistas y actualizados -->
+    <string-array name="realistic_prompts">
+        <item>Fénix renaciendo de las cenizas con geometría sagrada</item>
+        <item>Constelación personalizada con fechas significativas</item>
+        <item>Roble con raíces profundas y ramas formando un mapa mundial</item>
+        <item>Búho sabio con gafas y libros antiguos</item>
+        <item>Nave espacial sobre ciudad futurista con toques cyberpunk</item>
+        <item>Ojo que muestra un paisaje montañoso en la pupila</item>
+        <item>Manos entrelazadas formando un árbol genealógico</item>
+        <item>Reloj de arena con playa y montaña en cada sección</item>
+        <item>Serpiente enrollada en un bastón médico con símbolos atómicos</item>
+        <item>Mariposa con alas de circuito electrónico</item>
+    </string-array>
 </resources>

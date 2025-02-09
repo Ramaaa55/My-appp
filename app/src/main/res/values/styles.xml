@@ -44,5 +44,13 @@
         <item name="cardElevation">0dp</item>
         <item name="rippleColor">@color/overlay_light</item>
     </style>
+
+    <style name="Text.StyleName" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="autoSizeMinTextSize">12sp</item>
+        <item name="autoSizeMaxTextSize">14sp</item>
+        <item name="autoSizeTextType">uniform</item>
+    </style>
 </resources>
 

@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.mysticmango.idealtattooia.databinding.ItemStyleCardBinding
-import com.mysticmango.idealtattooia.TattooStyle
 
 class TattooAdapter(
     private val styles: List<TattooStyle>,
@@ -19,7 +18,7 @@ class TattooAdapter(
 
         fun bind(style: TattooStyle, isSelected: Boolean) {
             with(binding) {
-                styleImage.setImageResource(style.imageResId)
+                styleImage.setImageResource(style.imageRes)
                 styleName.text = style.name
 
                 root.isSelected = isSelected
