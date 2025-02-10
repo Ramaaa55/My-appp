@@ -1,6 +1,7 @@
 [versions]
 # Versiones principales
 agp = "8.3.2"  # Actualizado a versión compatible
+androidxCardview = "1.0.0"
 kotlin = "1.9.23"  # Actualizado a última versión estable
 compose-bom = "2024.06.00"  # BOM estable actual
 composeCompiler = "1.5.12"  # Alineado con Kotlin 1.9.23
@@ -18,6 +19,7 @@ appcompat = "1.6.1"
 
 [libraries]
 # AndroidX
+androidx-cardview-cardview = { module = "androidx.cardview:cardview", version.ref = "androidxCardview" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }

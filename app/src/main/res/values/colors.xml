@@ -6,12 +6,10 @@
     <color name="orange_selected">#FF6D00</color>
     <color name="gray_default">#E0E0E0</color>
     <color name="naranja" />
-    <color name="primaryColor" />
     <color name="orange">#F76B00</color>
     <color name="dark_gray">#1C1C1C</color>
     <color name="gray">#575757</color>
     <color name="dark_background">#121212</color>
-    <color name="accent_orange">#FF5722</color>
     <color name="card_background">#1F1F1F</color>
     <color name="card_dark_background">#1A1A1A</color>
     <color name="card_darker_background">#0D0D0D</color>
@@ -21,18 +19,22 @@
     <!-- Add these missing colors -->
     <color name="surfaceVariant">#E7E0EC</color>
     <color name="surfaceContainer">#F3EDF7</color>
-    <color name="accentOrange">#FF6B00</color>
-    <color name="textPrimary">#1C1B1F</color>
     <color name="gray_text">#808080</color>
+    <color name="orange_500">#FF9800</color>
+
     <!-- Material 3 color system -->
+    <color name="card_background_dark">#1E1E1E</color>
+    <color name="card_selected_dark">#2E2E2E</color>
+    <color name="card_stroke_dark">#404040</color>
+    <color name="text_secondary_dark">#BDBDBD</color>
     <color name="transparent">#00000000</color>
+    <color name="card_stroke">#FFE0E0E0</color> <!-- Color gris claro para el borde -->
     <!-- Base colors -->
     <color name="black">#FF000000</color>
 
     <!-- Theme colors -->
     <color name="background">#FF121214</color>
     <color name="surface">#FF1E1E20</color>
-    <color name="accent">#FF6B38</color>
     <color name="selected_card_background">#FFFFFF</color>
 
     <!-- Text colors -->
@@ -53,6 +55,7 @@
     <color name="primary_color">#6200EE</color>
     <color name="primary_dark">#3700B3</color>
     <color name="accent_color">#03DAC6</color>
+    <color name="accent">#FF5722</color>
 
     <!-- Neutral colors -->
     <color name="primary_text">#FF000000</color>
@@ -63,9 +66,10 @@
     <color name="teal_200">#03DAC6</color>
 
     <!-- Material3 Purple 200 -->
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#FFFFFF</color>
     <color name="orange_primary">#FF5500</color>
     <!-- Material3 Container Colors -->
     <color name="colorPrimaryContainer">#EADDFF</color>
     <color name="colorOnPrimaryContainer">#21005E</color>
+
 </resources>

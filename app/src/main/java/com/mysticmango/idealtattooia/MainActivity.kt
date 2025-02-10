@@ -59,11 +59,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun configurarEstilos() {
         val styleRecycler = findViewById<RecyclerView>(R.id.styleRecycler)
-        styleRecycler.layoutManager = LinearLayoutManager(
-            this,
-            LinearLayoutManager.HORIZONTAL,  // Scroll horizontal
-            false
-        )
+        styleRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         // Espaciado entre items
         styleRecycler.addItemDecoration(
@@ -76,12 +72,8 @@ class MainActivity : AppCompatActivity() {
         )
 
         val styles = TattooStyleProvider.defaultStyles()
-        styleRecycler.adapter = StyleAdapter(styles) { selectedStyle ->
-            Toast.makeText(
-                this,
-                "Estilo seleccionado: ${selectedStyle.name}",
-                Toast.LENGTH_SHORT
-            ).show()
+        styleRecycler.adapter = StyleAdapter(styles) { position ->
+            Toast.makeText(this, "Estilo seleccionado: ${styles[position].name}", Toast.LENGTH_SHORT).show()
         }
     }
 

@@ -1,10 +1,5 @@
-package com.mysticmango.idealtattooia
-
-// Único archivo que contiene la definición del modelo
-data class TattooStyle(
-    val imageRes: Int,  // Usar mismo nombre en todas partes
-    val name: String
-)
+import com.mysticmango.idealtattooia.R
+import com.mysticmango.idealtattooia.TattooStyle
 
 object TattooStyleProvider {
     fun defaultStyles(): List<TattooStyle> {

@@ -2,38 +2,43 @@
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/styleCard"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="12dp"
-    app:strokeColor="@color/white"
-    app:strokeWidth="1dp">
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/card_background"
+    app:strokeColor="@color/accent_orange"
+    app:strokeWidth="@dimen/stroke_width"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardPreventCornerOverlap="true">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <ImageView
             android:id="@+id/styleImage"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:contentDescription="@string/style_image_desc"/>
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"/>
 
-        <com.google.android.material.textview.MaterialTextView
+        <TextView
             android:id="@+id/styleName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:padding="12dp"
-            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:shadowColor="#80000000"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="4"/>
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"/>
 
-    </RelativeLayout>
+        <ImageView
+            android:id="@+id/selectionBadge"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:visibility="invisible"
+            android:src="@drawable/ic_check_circle"/>
+
+    </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
