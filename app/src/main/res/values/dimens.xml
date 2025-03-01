@@ -12,15 +12,14 @@
     <dimen name="radius_sm">12dp</dimen>
     <dimen name="radius_md">16dp</dimen>
     <dimen name="radius_lg">24dp</dimen>
-    <dimen name="stroke_width">2dp</dimen>
+
     <!-- Text sizes -->
     <dimen name="text_xs">12sp</dimen>
     <dimen name="text_sm">14sp</dimen>
     <dimen name="text_md">16sp</dimen>
     <dimen name="text_lg">20sp</dimen>
     <dimen name="text_xl">24sp</dimen>
-    <dimen name="default_stroke_width">2dp</dimen>
-    <dimen name="selected_stroke_width">4dp</dimen>
+
     <!-- Component sizes -->
     <dimen name="input_height">120dp</dimen>
     <dimen name="style_card_width">140dp</dimen>
@@ -34,5 +33,22 @@
     <!-- Text Sizes -->
     <dimen name="text_body">14sp</dimen>
     <dimen name="text_title">18sp</dimen>
+
+    <dimen name="stroke_width">2dp</dimen>
+
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_selected_elevation">8dp</dimen>
+    <dimen name="card_stroke_width">1dp</dimen>
+    <dimen name="card_selected_stroke_width">4dp</dimen>
+    <dimen name="card_content_padding">16dp</dimen>
+    <dimen name="item_spacing">8dp</dimen>
+
+    <dimen name="style_text_max_width">144dp</dimen>
+
+    <dimen name="style_text_size">16sp</dimen>
+
+    <dimen name="style_image_margin_bottom">4dp</dimen>
+    <dimen name="style_text_margin_top">8dp</dimen>
 </resources>
 

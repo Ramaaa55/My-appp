@@ -10,7 +10,7 @@
     <color name="dark_gray">#1C1C1C</color>
     <color name="gray">#575757</color>
     <color name="dark_background">#121212</color>
-    <color name="card_background">#1F1F1F</color>
+    <color name="card_background">#1E1E1E</color>
     <color name="card_dark_background">#1A1A1A</color>
     <color name="card_darker_background">#0D0D0D</color>
     <color name="style_selected_stroke">#F76B00</color>
@@ -21,6 +21,10 @@
     <color name="surfaceContainer">#F3EDF7</color>
     <color name="gray_text">#808080</color>
     <color name="orange_500">#FF9800</color>
+    <color name="orange_dark">#FF6B00</color>
+    <color name="orange_gradient">#FF9D00</color>
+    <color name="white_20">#33FFFFFF</color> <!-- 20% de opacidad -->
+    <color name="background_dark">#121212</color>
 
     <!-- Material 3 color system -->
     <color name="card_background_dark">#1E1E1E</color>
@@ -59,11 +63,13 @@
 
     <!-- Neutral colors -->
     <color name="primary_text">#FF000000</color>
-
+    <color name="card_background_semi_transparent">#E6F5F5F5</color>
+    <color name="image_overlay">#66000000</color>
     <!-- Material3 Baseline Colors -->
     <color name="purple_500">#6750A4</color>
     <color name="purple_200">#E8DDFF</color>
     <color name="teal_200">#03DAC6</color>
+    <color name="textPrimary">#FFFFFF</color>
 
     <!-- Material3 Purple 200 -->
     <color name="white">#FFFFFF</color>
@@ -71,5 +77,6 @@
     <!-- Material3 Container Colors -->
     <color name="colorPrimaryContainer">#EADDFF</color>
     <color name="colorOnPrimaryContainer">#21005E</color>
+    <color name="hint_grey">#757575</color>
 
 </resources>

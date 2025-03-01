@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="Theme.IdealTattoo" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/orange_primary</item>
         <item name="colorPrimaryVariant">@color/black</item>
@@ -8,14 +8,18 @@
         <item name="android:navigationBarColor">@color/black</item>
     </style>
 
-    <style name="Theme.IdealTattooIA" parent="Theme.Material3.DayNight">
+    <style name="Theme.IdealTattooIA" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/orange_primary</item>
-        <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Referencias actualizadas -->
+        <item name="textInputStyle">@style/PromptInputStyle</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.App.Title</item>
+
+        <!-- Eliminar duplicados de colorPrimaryVariant y statusBarColor -->
         <item name="android:statusBarColor">@color/black</item>
         <item name="android:windowBackground">@color/black</item>
-        <item name="android:navigationBarColor">@color/black</item>
-        <item name="textAppearanceBodyMedium">@style/CustomTextAppearance.Body</item>
     </style>
 
     <style name="CustomTextAppearance.Body" parent="TextAppearance.Material3.BodyMedium">
