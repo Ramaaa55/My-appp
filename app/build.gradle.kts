@@ -120,6 +120,9 @@ dependencies {
     implementation("androidx.compose.ui:ui:1.6.7")
     implementation("androidx.compose.material3:material3:1.2.1")
     implementation("androidx.compose.material:material-icons-extended:1.6.7")
+
+    // AdMob
+    implementation("com.google.android.gms:play-services-ads:22.6.0")
 }
 
 // Configuración de resolución fuera del bloque dependencies
