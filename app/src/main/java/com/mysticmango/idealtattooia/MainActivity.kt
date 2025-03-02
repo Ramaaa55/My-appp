@@ -517,7 +517,6 @@ class MainActivity : AppCompatActivity() {
         // Add banner ad to the dialog
         val adView = AdView(this)
         adView.adUnitId = bannerAdUnitId
-        adView.adSize = AdSize.BANNER
 
         // Load the banner ad
         val adRequest = AdRequest.Builder().build()
