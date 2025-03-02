@@ -208,7 +208,9 @@ class MainActivity : AppCompatActivity() {
             .writeTimeout(30, TimeUnit.SECONDS)
             .build()
 
-        val encodedPrompt = URLEncoder.encode("$prompt in $style style, 8k resolution", "UTF-8")
+        // Modify the prompt to ensure black and white professional tattoo design
+        val enhancedPrompt = "$prompt in $style style, professional black and white tattoo design, high contrast, clean lines, detailed tattoo art, white background, 8k resolution"
+        val encodedPrompt = URLEncoder.encode(enhancedPrompt, "UTF-8")
         val imageUrl = "https://image.pollinations.ai/prompt/$encodedPrompt?width=512&height=512&nologo=true&seed=${System.currentTimeMillis()}"
 
         Log.d("ImageDebug", "URL: $imageUrl")
@@ -261,14 +263,33 @@ class MainActivity : AppCompatActivity() {
         val closeButton = dialogView.findViewById<Button>(R.id.close_button)
         val saveButton = dialogView.findViewById<Button>(R.id.save_button)
 
-        // Load image into the dialog
+        // Apply black and white filter
+        val blackAndWhiteMatrix = ColorMatrix().apply {
+            setSaturation(0f) // Remove all color (make it grayscale)
+            // Increase contrast slightly
+            val contrast = 1.2f
+            val scale = contrast
+            val translate = (-.5f * scale + .5f) * 255f
+            set(floatArrayOf(
+                scale, 0f, 0f, 0f, translate,
+                0f, scale, 0f, 0f, translate,
+                0f, 0f, scale, 0f, translate,
+                0f, 0f, 0f, 1f, 0f
+            ))
+        }
+
+        // Load image into the dialog with black and white filter
         Glide.with(this)
             .load(imageBytes)
             .apply(RequestOptions()
                 .override(1080, 1080)
                 .transform(CenterCrop(), RoundedCorners(32))
+                .placeholder(R.drawable.loading_animation)
             )
             .into(resultImage)
+
+        // Apply black and white filter after loading
+        resultImage.colorFilter = ColorMatrixColorFilter(blackAndWhiteMatrix)
 
         val dialog = AlertDialog.Builder(this, R.style.Theme_Dialog)
             .setView(dialogView)

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base layer for the black and white filter effect -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#10000000"/>
+            <corners android:radius="20dp"/>
+        </shape>
+    </item>
+
+    <!-- Subtle texture overlay to enhance the tattoo appearance -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="100%p"
+                android:startColor="#00FFFFFF"
+                android:endColor="#15000000"/>
+            <corners android:radius="20dp"/>
+        </shape>
+    </item>
+
+    <!-- Very subtle vignette effect -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="100%p"
+                android:startColor="#00000000"
+                android:endColor="#10000000"/>
+            <corners android:radius="20dp"/>
+        </shape>
+    </item>
+</layer-list>

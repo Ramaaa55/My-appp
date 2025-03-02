@@ -21,13 +21,26 @@ class TattooAdapter(
             with(binding) {
                 styleImage.setImageResource(style.imageRes)
                 styleName.text = style.name
-                root.isSelected = isSelected
+
+                // Apply selection state
+                if (isSelected) {
+                    cardView.setBackgroundResource(R.drawable.selected_style_border)
+                } else {
+                    cardView.setBackgroundResource(0)
+                    cardView.setCardBackgroundColor(0xFF1A1A1A.toInt())
+                }
 
                 root.setOnClickListener {
                     if (bindingAdapterPosition != RecyclerView.NO_POSITION) {
                         val previousSelected = selectedPosition
                         selectedPosition = bindingAdapterPosition
+
+                        // Update previous and new selected items
+                        if (previousSelected != -1) {
+                            notifyItemChanged(previousSelected)
+                        }
                         notifyItemChanged(selectedPosition)
+
                         onStyleSelected(style)
                     }
                 }
@@ -53,4 +66,4 @@ class TattooAdapter(
     fun getSelectedStyle(): TattooStyle? {
         return if (selectedPosition != -1) styles[selectedPosition] else null
     }
-} 
+}

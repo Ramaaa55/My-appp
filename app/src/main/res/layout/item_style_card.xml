@@ -6,10 +6,11 @@
     android:layout_width="160dp"
     android:layout_height="200dp"
     app:cardCornerRadius="16dp"
-    app:cardBackgroundColor="@android:color/transparent"
+    app:cardBackgroundColor="#1A1A1A"
     app:strokeWidth="0dp"
-    app:strokeColor="@color/white"
-    app:cardElevation="0dp">
+    app:cardElevation="4dp"
+    android:stateListAnimator="@animator/card_selection"
+    android:foreground="?attr/selectableItemBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +24,8 @@
             android:layout_height="140dp"
             android:scaleType="centerCrop"
             app:shapeAppearanceOverlay="@style/RoundedImageCorners"
-            android:clipToOutline="true"/>
+            android:clipToOutline="true"
+            android:layout_margin="8dp"/>
 
         <!-- Texto del estilo -->
         <TextView
