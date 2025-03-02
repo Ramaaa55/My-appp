@@ -86,6 +86,7 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import android.provider.MediaStore
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.PorterDuff
+import android.graphics.Bitmap
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -191,11 +192,19 @@ class MainActivity : AppCompatActivity() {
     private fun showLoading() {
         val loadingOverlay = findViewById<View>(R.id.loading_overlay)
         loadingOverlay?.visibility = View.VISIBLE
+
+        // Add fade-in animation
+        loadingOverlay?.alpha = 0f
+        loadingOverlay?.animate()?.alpha(1f)?.setDuration(300)?.start()
     }
 
     private fun hideLoading() {
         val loadingOverlay = findViewById<View>(R.id.loading_overlay)
-        loadingOverlay?.visibility = View.GONE
+
+        // Add fade-out animation
+        loadingOverlay?.animate()?.alpha(0f)?.setDuration(300)?.withEndAction {
+            loadingOverlay.visibility = View.GONE
+        }?.start()
     }
 
     private fun generateTattooDesign(prompt: String, style: String) {
@@ -209,7 +218,7 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         // Modify the prompt to ensure black and white professional tattoo design
-        val enhancedPrompt = "$prompt in $style style, professional black and white tattoo design, high contrast, clean lines, detailed tattoo art, white background, 8k resolution"
+        val enhancedPrompt = "$prompt in $style style, professional black and white tattoo design, high contrast, clean lines, detailed tattoo art, white background, monochrome, ink drawing, 8k resolution"
         val encodedPrompt = URLEncoder.encode(enhancedPrompt, "UTF-8")
         val imageUrl = "https://image.pollinations.ai/prompt/$encodedPrompt?width=512&height=512&nologo=true&seed=${System.currentTimeMillis()}"
 
@@ -263,11 +272,11 @@ class MainActivity : AppCompatActivity() {
         val closeButton = dialogView.findViewById<Button>(R.id.close_button)
         val saveButton = dialogView.findViewById<Button>(R.id.save_button)
 
-        // Apply black and white filter
+        // Apply black and white filter with enhanced contrast
         val blackAndWhiteMatrix = ColorMatrix().apply {
             setSaturation(0f) // Remove all color (make it grayscale)
-            // Increase contrast slightly
-            val contrast = 1.2f
+            // Increase contrast for more professional look
+            val contrast = 1.3f
             val scale = contrast
             val translate = (-.5f * scale + .5f) * 255f
             set(floatArrayOf(
@@ -280,16 +289,32 @@ class MainActivity : AppCompatActivity() {
 
         // Load image into the dialog with black and white filter
         Glide.with(this)
+            .asBitmap()
             .load(imageBytes)
             .apply(RequestOptions()
                 .override(1080, 1080)
                 .transform(CenterCrop(), RoundedCorners(32))
                 .placeholder(R.drawable.loading_animation)
             )
-            .into(resultImage)
+            .into(object : com.bumptech.glide.request.target.CustomTarget<Bitmap>() {
+                override fun onResourceReady(resource: Bitmap, transition: com.bumptech.glide.request.transition.Transition<in Bitmap>?) {
+                    // Apply black and white filter to bitmap
+                    val paint = android.graphics.Paint().apply {
+                        colorFilter = ColorMatrixColorFilter(blackAndWhiteMatrix)
+                    }
 
-        // Apply black and white filter after loading
-        resultImage.colorFilter = ColorMatrixColorFilter(blackAndWhiteMatrix)
+                    val filteredBitmap = Bitmap.createBitmap(resource.width, resource.height, Bitmap.Config.ARGB_8888)
+                    val canvas = android.graphics.Canvas(filteredBitmap)
+                    canvas.drawBitmap(resource, 0f, 0f, paint)
+
+                    // Set the filtered bitmap to the ImageView
+                    resultImage.setImageBitmap(filteredBitmap)
+                }
+
+                override fun onLoadCleared(placeholder: Drawable?) {
+                    resultImage.setImageDrawable(placeholder)
+                }
+            })
 
         val dialog = AlertDialog.Builder(this, R.style.Theme_Dialog)
             .setView(dialogView)
