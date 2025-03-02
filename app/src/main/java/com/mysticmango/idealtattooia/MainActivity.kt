@@ -99,6 +99,7 @@ class MainActivity : AppCompatActivity() {
     private val tattooAdapter = TattooAdapter(
         styles = TattooStyleProvider.defaultStyles(),
         onStyleSelected = { selectedStyle: TattooStyle ->
+            this.selectedStyle = selectedStyle
             Toast.makeText(this, "Estilo: ${selectedStyle.name}", Toast.LENGTH_SHORT).show()
         }
     )
@@ -137,113 +138,68 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Configurar visibilidad inicial
-        binding.scrimView.visibility = View.GONE
-        binding.loadingContainer.visibility = View.GONE
-        binding.resultContainer.visibility = View.GONE
+        // Create overlay for loading
+        val rootView = findViewById<View>(android.R.id.content)
+        val loadingOverlay = LayoutInflater.from(this).inflate(R.layout.overlay_loading, null)
+        val overlayParams = FrameLayout.LayoutParams(
+            FrameLayout.LayoutParams.MATCH_PARENT,
+            FrameLayout.LayoutParams.MATCH_PARENT
+        )
+        loadingOverlay.layoutParams = overlayParams
+        loadingOverlay.visibility = View.GONE
+        (rootView as FrameLayout).addView(loadingOverlay)
 
+        // Initialize views
         styleRecyclerView = binding.styleRecycler
         promptEditText = binding.promptInput
         btnSuggest = binding.surpriseButton
         btnGenerate = binding.generateButton
-        generatedTattoo = binding.generatedTattoo
 
-        setupLoadingDialog()
-        setupButtons()
-        setupStyleSelector()
-        setupLoadingSpinner()
+        // Hide any progress indicators initially
+        hideLoading()
 
-        supportActionBar?.show()
-
-        val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_loading, null)
-        val spinKitView = dialogView.findViewById<SpinKitView>(R.id.spin_kit)
-        spinKitView.setIndeterminateDrawable(Circle())
-
+        // Setup RecyclerView
         binding.styleRecycler.apply {
             layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
             adapter = tattooAdapter
         }
 
-        binding.generateButton.setOnClickListener {
-            val prompt = binding.promptInput.text.toString().trim()
-            val selectedStyle = (binding.styleRecycler.adapter as TattooAdapter).getSelectedStyle()
-
-            if (prompt.isNotEmpty() && selectedStyle != null) {
-                generateTattooDesign(prompt, selectedStyle.name)
-            } else {
-                Toast.makeText(this, "Ingresa un prompt y selecciona un estilo", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        binding.downloadButton.setOnClickListener { saveToGallery() }
-        binding.closeButton.setOnClickListener {
-            binding.scrimView.visibility = View.GONE
-            binding.resultContainer.visibility = View.GONE
-            binding.surpriseButton.visibility = View.VISIBLE
-        }
-
-        // Configurar ProgressBar
-        binding.spinKitLoading.visibility = View.GONE
-        binding.spinKitProgress.visibility = View.VISIBLE
-    }
-
-    private fun setupStyleSelector() {
-        binding.styleRecycler.apply {
-            layoutManager = LinearLayoutManager(
-                this@MainActivity,
-                LinearLayoutManager.HORIZONTAL,
-                false
-            )
-            adapter = tattooAdapter
-        }
-    }
-
-    private fun setupButtons() {
-        btnSuggest.setOnClickListener {
+        // Setup buttons
+        binding.surpriseButton.setOnClickListener {
             val randomPrompt = surprisePrompts.random()
             promptEditText.setText(randomPrompt)
             Toast.makeText(this, "¡Prompt sugerido!", Toast.LENGTH_SHORT).show()
         }
 
-        btnGenerate.setOnClickListener {
+        binding.generateButton.setOnClickListener {
             val prompt = promptEditText.text.toString().trim()
-            if (prompt.isNotEmpty()) {
-                currentImageJob?.cancel()
-                currentImageJob = lifecycleScope.launch {
-                    generateTattooDesign(prompt, selectedStyle?.name ?: "DefaultStyle")
-                }
+            val selectedStyle = tattooAdapter.getSelectedStyle()
+
+            if (prompt.isNotEmpty() && selectedStyle != null) {
+                showLoading()
+                generateTattooDesign(prompt, selectedStyle.name)
             } else {
-                Toast.makeText(this, "Ingresa una descripción primero", Toast.LENGTH_SHORT).show()
+                if (prompt.isEmpty()) {
+                    Toast.makeText(this, "Ingresa un prompt primero", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Selecciona un estilo", Toast.LENGTH_SHORT).show()
+                }
             }
         }
-
-        // Mantener visibilidad del botón
-        binding.surpriseButton.visibility = View.VISIBLE
     }
 
-    private fun getSelectedStyle(): TattooStyle? {
-        return selectedStyle
+    private fun showLoading() {
+        val loadingOverlay = findViewById<View>(R.id.loading_overlay)
+        loadingOverlay?.visibility = View.VISIBLE
     }
 
-    private fun showInputError() {
-        val errorMessage = when {
-            promptEditText.text.isNullOrEmpty() -> "¡Escribe una descripción!"
-            selectedStyle == null -> "¡Selecciona un estilo!"
-            else -> "Datos inválidos"
-        }
-        Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
-    }
-
-    private fun setupLoadingDialog() {
-        // Eliminar todo el contenido de este método
-    }
-
-    private fun setupLoadingSpinner() {
-        // Eliminar todo el contenido de este método
+    private fun hideLoading() {
+        val loadingOverlay = findViewById<View>(R.id.loading_overlay)
+        loadingOverlay?.visibility = View.GONE
     }
 
     private fun generateTattooDesign(prompt: String, style: String) {
-        showLoading(true)
+        showLoading()
         currentImageJob?.cancel()
 
         val client = OkHttpClient.Builder()
@@ -265,9 +221,8 @@ class MainActivity : AppCompatActivity() {
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 runOnUiThread {
-                    showLoading(false)
+                    hideLoading()
                     showError("Tiempo de espera agotado. Verifica tu conexión y vuelve a intentar")
-                    binding.spinKitLoading.visibility = View.GONE
                 }
             }
 
@@ -275,7 +230,7 @@ class MainActivity : AppCompatActivity() {
                 response.use {
                     if (!response.isSuccessful) {
                         runOnUiThread {
-                            showLoading(false)
+                            hideLoading()
                             showError("API Error: ${response.code}")
                         }
                         return
@@ -286,45 +241,9 @@ class MainActivity : AppCompatActivity() {
 
                     runOnUiThread {
                         if (bytes != null && bytes.isNotEmpty()) {
-                            Glide.with(this@MainActivity)
-                                .load(bytes)
-                                .apply(RequestOptions()
-                                    .override(1080, 1080)
-                                    .transform(CenterCrop(), RoundedCorners(32.dpToPx()))
-                                )
-                                .listener(object : RequestListener<Drawable> {
-                                    override fun onResourceReady(
-                                        resource: Drawable,
-                                        model: Any,
-                                        target: Target<Drawable>,
-                                        dataSource: DataSource,
-                                        isFirstResource: Boolean
-                                    ): Boolean {
-                                        binding.run {
-                                            loadingContainer.visibility = View.GONE
-                                            scrimView.visibility = View.GONE
-                                            resultContainer.visibility = View.VISIBLE
-                                            generatedTattoo.alpha = 1.0f
-                                            surpriseButton.visibility = View.GONE
-                                        }
-                                        return false
-                                    }
-
-                                    override fun onLoadFailed(
-                                        e: GlideException?,
-                                        model: Any?,
-                                        target: Target<Drawable>,
-                                        isFirstResource: Boolean
-                                    ): Boolean {
-                                        showLoading(false)
-                                        showError("Error: ${e?.message ?: "Unknown error"}")
-                                        binding.spinKitLoading.visibility = View.GONE
-                                        return true
-                                    }
-                                })
-                                .into(binding.generatedTattoo)
+                            showResultDialog(bytes)
                         } else {
-                            showLoading(false)
+                            hideLoading()
                             showError("Empty response")
                         }
                     }
@@ -333,88 +252,67 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun showLoading(show: Boolean) {
-        binding.spinKitLoading.visibility = if (show) View.VISIBLE else View.GONE
-    }
+    private fun showResultDialog(imageBytes: ByteArray) {
+        hideLoading()
 
-    private fun showResult(designUrl: String) {
-        binding.downloadButton.visibility = View.VISIBLE
-        binding.surpriseButton.visibility = View.VISIBLE
+        // Create and show result dialog
+        val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_result, null)
+        val resultImage = dialogView.findViewById<ImageView>(R.id.result_image)
+        val closeButton = dialogView.findViewById<Button>(R.id.close_button)
+        val saveButton = dialogView.findViewById<Button>(R.id.save_button)
 
-        generatedTattoo.apply {
-            alpha = 1.0f
-            scaleType = ImageView.ScaleType.CENTER_INSIDE
+        // Load image into the dialog
+        Glide.with(this)
+            .load(imageBytes)
+            .apply(RequestOptions()
+                .override(1080, 1080)
+                .transform(CenterCrop(), RoundedCorners(32))
+            )
+            .into(resultImage)
+
+        val dialog = AlertDialog.Builder(this, R.style.Theme_Dialog)
+            .setView(dialogView)
+            .setCancelable(true)
+            .create()
+
+        // Setup buttons
+        closeButton.setOnClickListener {
+            dialog.dismiss()
         }
 
-        binding.scrimView.visibility = View.VISIBLE
-        binding.loadingContainer.visibility = View.GONE
-        binding.resultContainer.visibility = View.VISIBLE
-    }
-
-    private fun applyTattooStyle(imageView: ImageView) {
-        imageView.apply {
-            scaleType = ImageView.ScaleType.CENTER_INSIDE
-            setBackgroundResource(R.drawable.rounded_white_background)
-        }
-    }
-
-    private fun setupDownloadButton() {
-        binding.downloadButton.apply {
-            visibility = View.VISIBLE
-            setOnClickListener {
-                saveToGallery()
-            }
-        }
-    }
-
-    private fun isNetworkAvailable(): Boolean {
-        val connectivityManager = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
-        val activeNetwork = connectivityManager.activeNetwork ?: return false
-        val networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork) ?: return false
-        return networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-    }
-
-    private fun showError(message: String) {
-        lifecycleScope.launch(Dispatchers.Main) {
-            binding.loadingContainer.visibility = View.GONE
-            AlertDialog.Builder(this@MainActivity)
-                .setTitle("Error")
-                .setMessage(message)
-                .setPositiveButton("Reintentar") { _, _ ->
-                    if (retryCount < 3) {
-                        retryCount++
-                        generateTattooDesign(
-                            binding.promptInput.text.toString(),
-                            selectedStyle?.name ?: "Tradicional"
-                        )
-                    } else {
-                        Toast.makeText(this@MainActivity, "Límite de reintentos alcanzado", Toast.LENGTH_SHORT).show()
-                    }
-                }
-                .setNegativeButton("Cancelar", null)
-                .show()
-        }
-    }
-
-    fun Int.dpToPx(): Int = (this * resources.displayMetrics.density).toInt()
-
-    private fun saveToGallery() {
-        try {
-            val drawable = binding.generatedTattoo.drawable
+        saveButton.setOnClickListener {
+            // Save image to gallery
+            val drawable = resultImage.drawable
             if (drawable is BitmapDrawable) {
                 val bitmap = drawable.bitmap
                 MediaStore.Images.Media.insertImage(
                     contentResolver,
                     bitmap,
-                    "Tattoo_HD_${System.currentTimeMillis()}",
+                    "Tattoo_${System.currentTimeMillis()}",
                     "Generated tattoo design"
                 )
                 Toast.makeText(this, "Imagen guardada en la galería", Toast.LENGTH_SHORT).show()
             }
-        } catch (e: Exception) {
-            showError("Error al guardar: ${e.message}")
         }
+
+        dialog.show()
+    }
+
+    private fun showError(message: String) {
+        AlertDialog.Builder(this)
+            .setTitle("Error")
+            .setMessage(message)
+            .setPositiveButton("Reintentar") { _, _ ->
+                if (retryCount < 3) {
+                    retryCount++
+                    val prompt = promptEditText.text.toString()
+                    val style = selectedStyle?.name ?: "Tradicional"
+                    generateTattooDesign(prompt, style)
+                } else {
+                    Toast.makeText(this, "Límite de reintentos alcanzado", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .setNegativeButton("Cancelar", null)
+            .show()
     }
 }
-
-
