@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:text=" IA"
                 android:textAppearance="@style/TextAppearance.App.Title"
-                android:textColor="@color/accent"/>
+                android:textColor="@color/accent_orange"/>
         </LinearLayout>
 
         <!-- Prompt Section -->
@@ -87,7 +87,7 @@
             android:layout_marginTop="16dp"
             android:text="Sorpréndeme"
             android:textColor="@color/background"
-            app:backgroundTint="@color/text_primary"
+            app:backgroundTint="@color/accent_orange"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/promptCard"/>
@@ -136,7 +136,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/generate_button_text"
-                    app:backgroundTint="@color/accent"
+                    app:backgroundTint="@color/accent_orange"
                     app:layout_constraintTop_toBottomOf="@id/styleRecycler"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"/>
@@ -179,76 +179,95 @@
             <!-- 3. Loading spinner (elevación mayor) -->
             <LinearLayout
                 android:id="@+id/loadingContainer"
-                android:elevation="12dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:elevation="24dp"
                 android:orientation="vertical"
+                android:gravity="center"
                 android:visibility="gone"
-                android:padding="24dp"
-                android:background="@drawable/rounded_white_background">
+                android:background="@android:color/transparent"
+                android:padding="24dp">
 
                 <com.github.ybq.android.spinkit.SpinKitView
-                    android:id="@+id/spin_kit"
+                    android:id="@+id/spin_kit_loading"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:indeterminateTint="@color/accent"/>
+                    app:SpinKit_Color="@color/accent_orange"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Generando diseño..."
-                    android:layout_marginTop="16dp"
-                    android:textColor="@color/black"/>
+                    android:text="Generating design..."
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.App.Body1"
+                    android:layout_marginTop="16dp"/>
             </LinearLayout>
 
             <!-- 4. Resultado (elevación mayor que scrim) -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/resultContainer"
-                android:elevation="12dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:elevation="24dp"
+                android:layout_width="300dp"
+                android:layout_height="400dp"
                 android:layout_gravity="center"
                 android:visibility="gone"
-                app:cardBackgroundColor="@android:color/white"
-                app:cardCornerRadius="24dp">
+                app:cardBackgroundColor="@color/accent_orange"
+                app:cardCornerRadius="16dp"
+                app:cardPreventCornerOverlap="true">
 
-                <LinearLayout
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="16dp">
+                    android:layout_height="match_parent"
+                    android:background="@drawable/skin_texture_background"
+                    android:padding="8dp">
 
                     <ImageView
                         android:id="@+id/generatedTattoo"
-                        android:layout_width="1080px"
-                        android:layout_height="1080px"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerInside"
                         android:adjustViewBounds="true"
-                        android:scaleType="centerCrop"
-                        android:background="@android:color/white"/>
+                        android:elevation="4dp"
+                        android:background="@drawable/tattoo_realistic_border"
+                        android:contentDescription="Vista previa del tatuaje"/>
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/downloadButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Descargar HD"
-                        style="@style/Widget.App.Button"
-                        android:layout_marginTop="16dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/skin_shadow_overlay"/>
 
-                    <ImageView
-                        android:id="@+id/closeButton"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_gravity="end"
-                        android:src="@drawable/ic_close"
-                        android:contentDescription="Cerrar"
-                        android:layout_marginBottom="8dp"
-                        android:visibility="visible"/>
-                </LinearLayout>
+                </FrameLayout>
             </androidx.cardview.widget.CardView>
 
         </FrameLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/downloadButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descargar"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/closeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cerrar" />
+
+        <ProgressBar
+            android:id="@+id/spin_kit_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/primary" />
+
+        <TextView
+            android:id="@+id/loadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Generating design..."
+            android:textColor="@color/primary"
+            android:visibility="gone"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

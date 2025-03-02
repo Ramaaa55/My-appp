@@ -71,7 +71,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.11"
+        kotlinCompilerExtensionVersion = "1.6.7"
     }
 }
 
@@ -79,7 +79,7 @@ dependencies {
     val composeBom = platform("androidx.compose:compose-bom:2024.02.02")
     implementation(composeBom)
 
-    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui:1.6.7")
     implementation("androidx.compose.material3:material3:1.2.1")
     implementation("androidx.compose.foundation:foundation-layout")
     implementation("androidx.compose.material:material-icons-extended:1.6.7")
@@ -116,6 +116,10 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
     implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
+
+    implementation("androidx.compose.ui:ui:1.6.7")
+    implementation("androidx.compose.material3:material3:1.2.1")
+    implementation("androidx.compose.material:material-icons-extended:1.6.7")
 }
 
 // Configuración de resolución fuera del bloque dependencies

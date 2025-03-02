@@ -19,7 +19,7 @@
             style="@style/SpinKitView.Large.Wave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:SpinKit_Color="@color/accent"
+            app:SpinKit_Color="@color/accent_orange"
             android:padding="20dp"/>
 
         <TextView
@@ -30,6 +30,12 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="16dp"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/accent_orange"
             android:layout_marginTop="16dp"/>
 
     </LinearLayout>

@@ -85,6 +85,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import android.provider.MediaStore
 import android.graphics.drawable.BitmapDrawable
+import android.graphics.PorterDuff
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -180,6 +181,10 @@ class MainActivity : AppCompatActivity() {
             binding.resultContainer.visibility = View.GONE
             binding.surpriseButton.visibility = View.VISIBLE
         }
+
+        // Configurar ProgressBar
+        binding.spinKitLoading.visibility = View.GONE
+        binding.spinKitProgress.visibility = View.VISIBLE
     }
 
     private fun setupStyleSelector() {
@@ -230,9 +235,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupLoadingDialog() {
+        // Eliminar todo el contenido de este método
     }
 
     private fun setupLoadingSpinner() {
+        // Eliminar todo el contenido de este método
     }
 
     private fun generateTattooDesign(prompt: String, style: String) {
@@ -260,7 +267,7 @@ class MainActivity : AppCompatActivity() {
                 runOnUiThread {
                     showLoading(false)
                     showError("Tiempo de espera agotado. Verifica tu conexión y vuelve a intentar")
-                    binding.spinKit.visibility = View.GONE
+                    binding.spinKitLoading.visibility = View.GONE
                 }
             }
 
@@ -298,8 +305,7 @@ class MainActivity : AppCompatActivity() {
                                             scrimView.visibility = View.GONE
                                             resultContainer.visibility = View.VISIBLE
                                             generatedTattoo.alpha = 1.0f
-                                            surpriseButton.visibility = View.VISIBLE
-                                            spinKit.visibility = View.GONE
+                                            surpriseButton.visibility = View.GONE
                                         }
                                         return false
                                     }
@@ -312,7 +318,7 @@ class MainActivity : AppCompatActivity() {
                                     ): Boolean {
                                         showLoading(false)
                                         showError("Error: ${e?.message ?: "Unknown error"}")
-                                        binding.spinKit.visibility = View.GONE
+                                        binding.spinKitLoading.visibility = View.GONE
                                         return true
                                     }
                                 })
@@ -328,32 +334,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showLoading(show: Boolean) {
-        binding.apply {
-            if (show) {
-                scrimView.visibility = View.VISIBLE
-                surpriseButton.visibility = View.GONE
-                loadingContainer.visibility = View.VISIBLE
-            } else {
-                scrimView.visibility = View.GONE
-                surpriseButton.visibility = View.VISIBLE
-                loadingContainer.visibility = View.GONE
-            }
-        }
+        binding.spinKitLoading.visibility = if (show) View.VISIBLE else View.GONE
     }
 
     private fun showResult(designUrl: String) {
-        binding.apply {
-            surpriseButton.visibility = View.VISIBLE
+        binding.downloadButton.visibility = View.VISIBLE
+        binding.surpriseButton.visibility = View.VISIBLE
 
-            generatedTattoo.apply {
-                alpha = 1.0f
-                scaleType = ImageView.ScaleType.CENTER_INSIDE
-            }
-
-            scrimView.visibility = View.VISIBLE
-            loadingContainer.visibility = View.GONE
-            resultContainer.visibility = View.VISIBLE
+        generatedTattoo.apply {
+            alpha = 1.0f
+            scaleType = ImageView.ScaleType.CENTER_INSIDE
         }
+
+        binding.scrimView.visibility = View.VISIBLE
+        binding.loadingContainer.visibility = View.GONE
+        binding.resultContainer.visibility = View.VISIBLE
     }
 
     private fun applyTattooStyle(imageView: ImageView) {
