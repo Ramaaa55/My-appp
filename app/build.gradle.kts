@@ -20,7 +20,7 @@ android {
         applicationId = "com.mysticmango.idealtattooia"
         minSdk = 24
         targetSdk = 34
-        versionCode = 24
+        versionCode = 26
         versionName = "1.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -33,6 +33,8 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            // Ensure AD_ID permission is included in release builds
+            manifestPlaceholders["adIdEnabled"] = true
         }
         debug {
             isDebuggable = true
@@ -41,6 +43,8 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            // Ensure AD_ID permission is included in debug builds
+            manifestPlaceholders["adIdEnabled"] = true
         }
     }
 
@@ -121,8 +125,10 @@ dependencies {
     implementation("androidx.compose.material3:material3:1.2.1")
     implementation("androidx.compose.material:material-icons-extended:1.6.7")
 
-    // AdMob
+    // AdMob - Ensure we're using the latest version
     implementation("com.google.android.gms:play-services-ads:22.6.0")
+    // Add Play Services Base for AD_ID support
+    implementation("com.google.android.gms:play-services-base:18.3.0")
 }
 
 // Configuración de resolución fuera del bloque dependencies

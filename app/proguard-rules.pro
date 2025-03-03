@@ -23,3 +23,7 @@
 # Suprimir advertencias relacionadas con LoudnessCodecController
 -dontwarn android.media.LoudnessCodecController$OnLoudnessCodecUpdateListener
 -dontwarn android.media.LoudnessCodecController
+
+# Keep AdMob classes
+-keep class com.google.android.gms.ads.** { *; }
+-keep class com.google.android.gms.common.** { *; }

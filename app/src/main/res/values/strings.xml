@@ -27,4 +27,5 @@
     <string name="surprise_button_text">¡Sorpréndeme!</string>
     <string name="generated_image_desc">Imagen generada del tatuaje</string>
     <string name="generated_tattoo_desc">Diseño de tatuaje generado</string>
+    <string name="admob_app_id">ca-app-pub-4766140355071916~7763797804</string>
 </resources>
