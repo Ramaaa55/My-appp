@@ -17,7 +17,8 @@ public class MyApplication extends Application {
 
         // Set up AdMob configuration
         RequestConfiguration configuration = new RequestConfiguration.Builder()
-                .setTestDeviceIds(Arrays.asList(RequestConfiguration.DEVICE_ID_EMULATOR))
+                // Use test device IDs directly instead of DEVICE_ID_EMULATOR constant
+                .setTestDeviceIds(Arrays.asList("EMULATOR"))
                 .build();
         MobileAds.setRequestConfiguration(configuration);
 
