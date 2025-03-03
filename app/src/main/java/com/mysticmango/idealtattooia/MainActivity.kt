@@ -124,6 +124,7 @@ class MainActivity : AppCompatActivity() {
     private var interstitialAd: InterstitialAd? = null
     private var pendingImageBytes: ByteArray? = null
     private var pendingStyle: String? = null
+    private var isLoadingFinished = false
 
     // Ad unit IDs
     private val rewardedAdUnitId = "ca-app-pub-4766140355071916/2782442591"
@@ -150,11 +151,56 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val surprisePrompts = arrayOf(
-        "Geometric wolf with tribal patterns",
-        "Watercolor phoenix rising from flames",
-        "Minimalist mountain range with moon phases",
-        "Cyberpunk robot arm with neon circuits",
-        "Japanese koi fish with cherry blossoms"
+        "Lobo aullando a la luna llena",
+        "Fénix emergiendo de las llamas",
+        "Dragón enrollado alrededor de una espada",
+        "Ojo que todo lo ve con símbolos alquímicos",
+        "Serpiente entrelazada con rosas",
+        "Árbol de la vida con raíces profundas",
+        "Calavera mexicana con decoraciones florales",
+        "León coronado con constelaciones estelares",
+        "Olas oceánicas rompiendo contra acantilados",
+        "Búho posado sobre libros antiguos",
+        "Mandala con geometría sagrada",
+        "Tigre en movimiento entre bambúes",
+        "Mano sosteniendo un corazón llameante",
+        "Ballena jorobada con sistema planetario",
+        "Colibrí libando flor tropical",
+        "Águila desplumando sus alas",
+        "Esqueleto de dinosaurio en actitud feroz",
+        "Escorpión con cola en espiral",
+        "Tortuga marina navegando corrientes",
+        "Llave antigua con engranajes visibles",
+        "Cadenas rotas convertidas en plumas",
+        "Círculo de piedras celtas con runas",
+        "Venado con astas formando ramas",
+        "Abejas rodeando panal hexagonal",
+        "Ancla marina con sirenas mitológicas",
+        "Reloj de arena con estrellas fugaces",
+        "Mariposa monarca con mapa migratorio",
+        "Puño cerrado rompiendo cadenas",
+        "Golondrinas en formación de vuelo",
+        "Líneas de Nazca estilizadas",
+        "Quetzalcoatl en pleno movimiento",
+        "Huellas de animales en espiral",
+        "Círculo zodiacal con símbolos ocultos",
+        "Herramientas de artesano medievales",
+        "Daga atravesando nube de humo",
+        "Manos entrelazadas formando raíces",
+        "Máscara veneciana con detalles barrocos",
+        "Símbolos de elementos naturales (tierra, aire, fuego, agua)",
+        "Barcos vikingos navegando tormentas",
+        "Espiral de galaxia en un ojo humano",
+        "Huellas digitales convertidas en paisaje",
+        "Símbolos de resistencia indígena",
+        "Círculo de hongos mágicos en bosque",
+        "Plumas de aves exóticas entrelazadas",
+        "Esqueleto de pez con arrecife coralino",
+        "Instrumentos musicales ancestrales",
+        "Neuronas formando constelaciones",
+        "Huracán conteniendo animales mitológicos",
+        "Escalera al cielo con peldaños rotos",
+        "Símbolo infinito con fractales matemáticos"
     )
 
     private var retryCount = 0
@@ -366,6 +412,7 @@ class MainActivity : AppCompatActivity() {
     private fun showLoading() {
         val loadingOverlay = findViewById<View>(R.id.loading_overlay)
         loadingOverlay?.visibility = View.VISIBLE
+        isLoadingFinished = false
 
         // Add fade-in animation
         loadingOverlay?.alpha = 0f
@@ -378,6 +425,7 @@ class MainActivity : AppCompatActivity() {
         // Add fade-out animation
         loadingOverlay?.animate()?.alpha(0f)?.setDuration(300)?.withEndAction {
             loadingOverlay.visibility = View.GONE
+            isLoadingFinished = true
         }?.start()
     }
 
@@ -441,10 +489,14 @@ class MainActivity : AppCompatActivity() {
                             // Store the image bytes and style for later use after the ad
                             pendingImageBytes = bytes
                             pendingStyle = style
-                            hideLoading()
 
-                            // Show rewarded ad before showing the result
-                            showRewardedAd()
+                            // Simulate a delay to show the loading spinner for a bit longer
+                            // then show the rewarded ad just before revealing the result
+                            Handler(Looper.getMainLooper()).postDelayed({
+                                // Show rewarded ad before showing the result
+                                showRewardedAd()
+                                hideLoading()
+                            }, 1500) // Show ad after 1.5 seconds
                         } else {
                             hideLoading()
                             showError("Empty response")
@@ -517,6 +569,16 @@ class MainActivity : AppCompatActivity() {
         // Add banner ad to the dialog
         val adView = AdView(this)
         adView.adUnitId = bannerAdUnitId
+        adView.setAdSize(AdSize.BANNER)
+
+        // Set up the layout parameters for the AdView
+        val layoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+        layoutParams.gravity = Gravity.CENTER_HORIZONTAL
+        layoutParams.topMargin = resources.getDimensionPixelSize(R.dimen.spacing_md)
+        adView.layoutParams = layoutParams
 
         // Load the banner ad
         val adRequest = AdRequest.Builder().build()

@@ -71,7 +71,7 @@
                 app:cornerRadius="16dp" />
         </LinearLayout>
 
-        <!-- Banner Ad Container -->
+        <!-- Banner Ad Container - Positioned directly below the buttons -->
         <FrameLayout
             android:id="@+id/ad_container"
             android:layout_width="match_parent"
